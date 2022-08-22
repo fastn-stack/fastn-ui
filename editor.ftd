@@ -444,7 +444,10 @@ weight: 600
 
 
 
--- editor-main editor:
+-- ftd.column editor:
+width: fill
+
+--- editor-main:
 
 --- print-toc:
 if: $toc-show

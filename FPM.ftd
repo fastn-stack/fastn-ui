@@ -2,6 +2,7 @@
 
 -- fpm.package: fifthtry.github.io/fpm-ui
 zip: github.com/fifthtry/fpm-ui/archive/refs/heads/main.zip
+base: https://raw.githubusercontent.com/fifthtry/fpm-ui/main
 
 
 -- fpm.dependency: fifthtry.github.io/roboto-mono
