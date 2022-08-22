@@ -524,8 +524,9 @@ id: desktop-container
 overflow-x: auto
 height: calc 100vh
 anchor: window
-left:0
-top:0
+left: 0
+left if $open: -700
+top: 0
 background-color: $fpm.color.main.background.base
 
 --- ftd.row:
@@ -577,7 +578,7 @@ margin-top: 2
 --- container: change-request
 
 --- change-request-text:
-cr-number: #8 
+cr-number: #8
 cr-title: cr-title-it-can-be-short-it-can-be-long-in-that-case-we-do-line-break
 url: /somecrlink
 
@@ -600,7 +601,7 @@ sample-list: $sample-toc
 --- ftd.column:
 width: fill
 padding-top if $show-cr-ui: 8
- 
+
 --- ftd.row:
 width: fill
 id: text-container
@@ -647,7 +648,7 @@ height: fill
 spacing: 8
 overflow-y: auto
 id:toc-id
- 
+
 --- container: toc-id
 
 --- ftd.row:
@@ -715,18 +716,18 @@ overflow-y: auto
 if: $show-modification
 change: MERGE
 
-- While we love `fpm`, it is this `fpm` not the right 
-- tool for you. We document some of the reasons here. If 
+- While we love `fpm`, it is this `fpm` not the right
+- tool for you. We document some of the reasons here. If
 - you come across any other objects, please help us update
 - this page.
 
-+ While we love `fpm`, it is this `fpm` not the right 
-+ tool for you. We document some of the reasons here. If 
-+ you come across any other reasons why FPM should not 
++ While we love `fpm`, it is this `fpm` not the right
++ tool for you. We document some of the reasons here. If
++ you come across any other reasons why FPM should not
 + be used, please help us update this page.
-+ While we love `fpm`, it is this `fpm` not the right 
-+ tool for you. We document some of the reasons here. If 
-+ you come across any other reasons why FPM should not 
++ While we love `fpm`, it is this `fpm` not the right
++ tool for you. We document some of the reasons here. If
++ you come across any other reasons why FPM should not
 + be used, please help us update this page.
 
 --- container: code-container
@@ -757,11 +758,15 @@ package base not found. Package: fifthtry.github.io/doc-site, File: filename.png
 
 --- container: code-container
 
+--- ftd.row:
+width: fill
+id: edit-input
+
 --- ftd.input:
 if: $edits
 width: fill
 min-width: percent 100
-min-height: calc 100vh - 52px 
+min-height: calc 100vh - 52px
 multiline: true
 placeholder: -- ftd.text: hello world
 value: $source
@@ -772,6 +777,8 @@ color: $fpm.color.main.text
 role: $monospace
 background-color: $fpm.color.main.background.base
 white-space: pre
+
+--- container: edit-input
 
 --- guide-80chars:
 if: $show-guide
@@ -1036,7 +1043,7 @@ src: $showbar
 width: 20
 height: auto
 $on-click$: toggle $open
-$on-click$: $show-fullscreen = true 
+$on-click$: $show-fullscreen = true
 
 --- container: right-side
 
@@ -1059,7 +1066,7 @@ margin-top: 2
 --- container: change-request
 
 --- change-request-text:
-cr-number: #8 
+cr-number: #8
 cr-title: cr-title-it-can-be-short-it-can-be-long-in-that-case-we-do-line-break
 url: /somecrlink
 
@@ -1082,7 +1089,7 @@ sample-list: $sample-toc
 --- ftd.column:
 width: fill
 padding-top if $show-cr-ui: 8
- 
+
 --- ftd.row:
 width: fill
 id: text-container
@@ -1129,7 +1136,7 @@ height: fill
 spacing: 8
 overflow-y: auto
 id:toc-id
- 
+
 --- container: toc-id
 
 --- ftd.row:
@@ -1199,14 +1206,14 @@ overflow-y: auto
 if: $show-modification
 change: committed
 
-- While we love `fpm`, it is this `fpm` not the right 
-- tool for you. We document some of the reasons here. If 
+- While we love `fpm`, it is this `fpm` not the right
+- tool for you. We document some of the reasons here. If
 - you come across any other objects, please help us update
 - this page.
 
-+ While we love `fpm`, it is this `fpm` not the right 
-+ tool for you. We document some of the reasons here. If 
-+ you come across any other reasons why FPM should not 
++ While we love `fpm`, it is this `fpm` not the right
++ tool for you. We document some of the reasons here. If
++ you come across any other reasons why FPM should not
 + be used, please help us update this page.
 
 --- container: code-container
@@ -1516,9 +1523,9 @@ height: auto
 
 
 
--- object sync-obj: 
-function: http  
-method: get 
+-- object sync-obj:
+function: http
+method: get
 url: /-/editor-sync/
 
 -- ftd.row sync:
@@ -1577,8 +1584,8 @@ $on-click$: message-host $view-obj
 -- optional string create-file-path:
 $always-include$: true
 
--- object create-obj: 
-function: http  
+-- object create-obj:
+function: http
 method: post
 url: $url
 path: $create-file-path
@@ -1623,7 +1630,7 @@ border-radius: 8
 $always-include$: true
 
 -- object delete-obj:
-function: http  
+function: http
 method: post
 url: $url
 path: $delete-file-path
@@ -1695,7 +1702,7 @@ id: newfile-row
 --- ftd.row:
 width: fill
 background-color: $fpm.color.main.background.step-2
-padding-left: 10 
+padding-left: 10
 padding-right: 5
 padding-vertical: 3
 border-radius: 4
@@ -1722,7 +1729,7 @@ color: $fpm.color.main.text-strong
 border-width: 0
 cursor: text
 
---- ftd.image: 
+--- ftd.image:
 src: $arrow-right
 $on-click$: message-host $create-obj
 align: center
@@ -1759,14 +1766,14 @@ $on-click$: $show-overlay = false
 
 
 
--- optional string revert-file-path:  
-$always-include$: true  
+-- optional string revert-file-path:
+$always-include$: true
 
--- object revert-obj: 
-function: http  
-method: post  
-url: -/revert/  
-path: $revert-file-path 
+-- object revert-obj:
+function: http
+method: post
+url: -/revert/
+path: $revert-file-path
 operation: delete
 
 
@@ -1793,7 +1800,7 @@ id: newfile-row
 --- ftd.row:
 width: fill
 background-color: $fpm.color.main.background.step-2
-padding-left: 10 
+padding-left: 10
 padding-right: 5
 padding-vertical: 3
 border-radius: 4
@@ -1820,7 +1827,7 @@ color: $fpm.color.main.text-strong
 border-width: 0
 cursor: text
 
---- ftd.image: 
+--- ftd.image:
 src: $arrow-right
 $on-click$: message-host $create-obj
 align: center
@@ -2404,10 +2411,10 @@ id: iamoverlay
 -- ftd.row guide-80chars:
 border-right: 1
 border-color: $fpm.color.main.border
-height: calc 100vh - 82px
+height: calc 100vh - 52px
 anchor: parent
-top: 43
-left: 634
+top: 0
+left: 619
 width: 10
 z-index: 9999
 
@@ -2580,6 +2587,16 @@ width: 12
 if: $children is not empty
 src: $right-arrow
 $on-click$ if not $show-children:$show-children = false
+align: center
+padding-right: $fpm.space.space-1
+
+--- container: switch-container
+
+--- ftd.image:
+if: $children is empty
+src: $file
+width: 15
+height: auto
 align: center
 padding-right: $fpm.space.space-1
 
