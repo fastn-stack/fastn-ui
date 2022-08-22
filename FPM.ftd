@@ -4,6 +4,9 @@
 zip: github.com/fifthtry/fpm-ui/archive/refs/heads/main.zip
 
 
+-- fpm.dependency: fifthtry.github.io/roboto-mono
+
+
 
 
 
