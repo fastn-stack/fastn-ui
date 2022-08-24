@@ -1,0 +1,12 @@
+-- import: fpm
+
+
+-- fpm.cr-meta-data data:
+$processor$: cr-meta
+
+
+-- ftd.column description:
+
+--- ftd.text: $data.title
+
+--- ftd.text: Nothing to show
