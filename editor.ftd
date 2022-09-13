@@ -693,7 +693,7 @@ spacing: 8
 role: $fine-print-bold
 color: $fpm.color.main.cta-primary.base
 
-\--- ftd.text: (Preview)
+/--- ftd.text: (Preview)
 role: $fine-print-bold
 color: $fpm.color.main.cta-primary.base
 white-space: nowrap
@@ -834,15 +834,15 @@ align: center
 role: $fpm.type.fine-print
 color: $fpm.color.main.cta-primary.base
 
-\--- ftd.text: Iphone SE
+/--- ftd.text: Iphone SE
 role: $fpm.type.fine-print
 color: $fpm.color.main.text
 
-\--- ftd.text: Samsung Note
+/--- ftd.text: Samsung Note
 role: $fpm.type.fine-print
 color: $fpm.color.main.text
 
-\--- ftd.text: Samsung Galaxy
+/--- ftd.text: Samsung Galaxy
 role: $fpm.type.fine-print
 color: $fpm.color.main.text
 
@@ -920,7 +920,7 @@ right: 0
 bottom: 24
 z-index: 9999
 
-\--- ftd.image:
+/--- ftd.image:
 src: $edit
 width: 20
 height: auto
@@ -1180,7 +1180,7 @@ spacing: 8
 role: $fine-print-bold
 color: $fpm.color.main.cta-primary.base
 
-\--- ftd.text: (Preview)
+/--- ftd.text: (Preview)
 role: $fine-print-bold
 color: $fpm.color.main.cta-primary.base
 white-space: nowrap
@@ -1295,15 +1295,15 @@ align: center
 role: $fpm.type.fine-print
 color: $fpm.color.main.cta-primary.base
 
-\--- ftd.text: Iphone SE
+/--- ftd.text: Iphone SE
 role: $fpm.type.fine-print
 color: $fpm.color.main.text
 
-\--- ftd.text: Samsung Note
+/--- ftd.text: Samsung Note
 role: $fpm.type.fine-print
 color: $fpm.color.main.text
 
-\--- ftd.text: Samsung Galaxy
+/--- ftd.text: Samsung Galaxy
 role: $fpm.type.fine-print
 color: $fpm.color.main.text
 
@@ -1317,7 +1317,7 @@ right: 0
 bottom: 0
 width: 46
 height: fill
-id: image
+id: image-one
 padding-top: $fpm.space.space-3
 padding-bottom: 21
 spacing: 32
@@ -1326,7 +1326,7 @@ spacing: 32
 width: fill
 height: fill
 spacing: 32
-id: sidebar
+id: sidebar-one
 
 --- ftd.row:
 width: fill
@@ -1346,7 +1346,7 @@ src: $m-active
 width: fill
 $on-click$: toggle $show-modification
 
---- container: sidebar
+--- container: sidebar-one
 
 --- ftd.row:
 width: fill
@@ -1424,7 +1424,7 @@ margin-left: 16
 width: fill
 height: fill
 spacing: 32
-id: sidebar
+id: sidebar-two
 
 --- ftd.row:
 width: fill
@@ -1448,7 +1448,7 @@ width: fill
 height: auto
 $on-click$: toggle $show-modification
 
---- container: sidebar
+--- container: sidebar-two
 
 --- ftd.row:
 width: fill
@@ -1476,7 +1476,7 @@ $on-click$: toggle $show-conflict
 
 --- ftd.column:
 width: fill
-id: image
+id: image-two
 padding-horizontal:  12
 spacing: 32
 
@@ -1845,7 +1845,7 @@ border-width: 1
 border-color: $grey-dark
 padding: 3
 border-radius: 100
-id: close
+id: close-one
 
 --- ftd.image:
 src: $close
@@ -2111,7 +2111,7 @@ border-width: 1
 border-color: $grey-dark
 padding: 3
 border-radius: 100
-id: close
+id: close-two
 
 --- ftd.image:
 src: $close
