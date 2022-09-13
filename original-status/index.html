@@ -215,7 +215,255 @@
   "ftd#dark-mode": {
     "value": false,
     "dependencies": {
-      "$value#kind$": []
+      "$value#kind$": [
+        {
+          "condition": true,
+          "dependency_type": "Variable",
+          "parameters": {
+            "ftd#markdown-background-color.blockquote": {
+              "default": {
+                "important": false,
+                "reference": null,
+                "value": "light"
+              },
+              "value": {
+                "important": false,
+                "reference": null,
+                "value": "dark"
+              }
+            }
+          },
+          "remaining": null
+        },
+        {
+          "condition": true,
+          "dependency_type": "Variable",
+          "parameters": {
+            "ftd#markdown-background-color.code": {
+              "default": {
+                "important": false,
+                "reference": null,
+                "value": "light"
+              },
+              "value": {
+                "important": false,
+                "reference": null,
+                "value": "dark"
+              }
+            }
+          },
+          "remaining": null
+        },
+        {
+          "condition": true,
+          "dependency_type": "Variable",
+          "parameters": {
+            "ftd#markdown-background-color.link": {
+              "default": {
+                "important": false,
+                "reference": null,
+                "value": "light"
+              },
+              "value": {
+                "important": false,
+                "reference": null,
+                "value": "dark"
+              }
+            }
+          },
+          "remaining": null
+        },
+        {
+          "condition": true,
+          "dependency_type": "Variable",
+          "parameters": {
+            "ftd#markdown-background-color.link-code": {
+              "default": {
+                "important": false,
+                "reference": null,
+                "value": "light"
+              },
+              "value": {
+                "important": false,
+                "reference": null,
+                "value": "dark"
+              }
+            }
+          },
+          "remaining": null
+        },
+        {
+          "condition": true,
+          "dependency_type": "Variable",
+          "parameters": {
+            "ftd#markdown-background-color.link-visited": {
+              "default": {
+                "important": false,
+                "reference": null,
+                "value": "light"
+              },
+              "value": {
+                "important": false,
+                "reference": null,
+                "value": "dark"
+              }
+            }
+          },
+          "remaining": null
+        },
+        {
+          "condition": true,
+          "dependency_type": "Variable",
+          "parameters": {
+            "ftd#markdown-background-color.link-visited-code": {
+              "default": {
+                "important": false,
+                "reference": null,
+                "value": "light"
+              },
+              "value": {
+                "important": false,
+                "reference": null,
+                "value": "dark"
+              }
+            }
+          },
+          "remaining": null
+        },
+        {
+          "condition": true,
+          "dependency_type": "Variable",
+          "parameters": {
+            "ftd#markdown-background-color.ul-ol-li-before": {
+              "default": {
+                "important": false,
+                "reference": null,
+                "value": "light"
+              },
+              "value": {
+                "important": false,
+                "reference": null,
+                "value": "dark"
+              }
+            }
+          },
+          "remaining": null
+        },
+        {
+          "condition": true,
+          "dependency_type": "Variable",
+          "parameters": {
+            "ftd#markdown-color.code": {
+              "default": {
+                "important": false,
+                "reference": null,
+                "value": "light"
+              },
+              "value": {
+                "important": false,
+                "reference": null,
+                "value": "dark"
+              }
+            }
+          },
+          "remaining": null
+        },
+        {
+          "condition": true,
+          "dependency_type": "Variable",
+          "parameters": {
+            "ftd#markdown-color.link": {
+              "default": {
+                "important": false,
+                "reference": null,
+                "value": "light"
+              },
+              "value": {
+                "important": false,
+                "reference": null,
+                "value": "dark"
+              }
+            }
+          },
+          "remaining": null
+        },
+        {
+          "condition": true,
+          "dependency_type": "Variable",
+          "parameters": {
+            "ftd#markdown-color.link-code": {
+              "default": {
+                "important": false,
+                "reference": null,
+                "value": "light"
+              },
+              "value": {
+                "important": false,
+                "reference": null,
+                "value": "dark"
+              }
+            }
+          },
+          "remaining": null
+        },
+        {
+          "condition": true,
+          "dependency_type": "Variable",
+          "parameters": {
+            "ftd#markdown-color.link-visited": {
+              "default": {
+                "important": false,
+                "reference": null,
+                "value": "light"
+              },
+              "value": {
+                "important": false,
+                "reference": null,
+                "value": "dark"
+              }
+            }
+          },
+          "remaining": null
+        },
+        {
+          "condition": true,
+          "dependency_type": "Variable",
+          "parameters": {
+            "ftd#markdown-color.link-visited-code": {
+              "default": {
+                "important": false,
+                "reference": null,
+                "value": "light"
+              },
+              "value": {
+                "important": false,
+                "reference": null,
+                "value": "dark"
+              }
+            }
+          },
+          "remaining": null
+        },
+        {
+          "condition": true,
+          "dependency_type": "Variable",
+          "parameters": {
+            "ftd#markdown-color.ul-ol-li-before": {
+              "default": {
+                "important": false,
+                "reference": null,
+                "value": "light"
+              },
+              "value": {
+                "important": false,
+                "reference": null,
+                "value": "dark"
+              }
+            }
+          },
+          "remaining": null
+        }
+      ]
     }
   },
   "ftd#desktop-breakpoint": {
@@ -228,6 +476,81 @@
   },
   "ftd#follow-system-dark-mode": {
     "value": true,
+    "dependencies": {}
+  },
+  "ftd#markdown-background-color": {
+    "value": {
+      "blockquote": {
+        "$kind$": "light",
+        "dark": "#f0f0f0",
+        "light": "#f0f0f0"
+      },
+      "code": {
+        "$kind$": "light",
+        "dark": "#9f9b9b45",
+        "light": "#9f9b9b45"
+      },
+      "link": {
+        "$kind$": "light",
+        "dark": "#18181b",
+        "light": "#18181b"
+      },
+      "link-code": {
+        "$kind$": "light",
+        "dark": "#9f9b9b45",
+        "light": "#9f9b9b45"
+      },
+      "link-visited": {
+        "$kind$": "light",
+        "dark": "#18181b",
+        "light": "#18181b"
+      },
+      "link-visited-code": {
+        "$kind$": "light",
+        "dark": "#18181b",
+        "light": "#18181b"
+      },
+      "ul-ol-li-before": {
+        "$kind$": "light",
+        "dark": "#18181b",
+        "light": "#18181b"
+      }
+    },
+    "dependencies": {}
+  },
+  "ftd#markdown-color": {
+    "value": {
+      "code": {
+        "$kind$": "light",
+        "dark": "#f6f7f8",
+        "light": "#f6f7f8"
+      },
+      "link": {
+        "$kind$": "light",
+        "dark": "#58a6ff",
+        "light": "#6a89b8"
+      },
+      "link-code": {
+        "$kind$": "light",
+        "dark": "#58a6ff",
+        "light": "#6a89b8"
+      },
+      "link-visited": {
+        "$kind$": "light",
+        "dark": "#a27de7",
+        "light": "#9475cb"
+      },
+      "link-visited-code": {
+        "$kind$": "light",
+        "dark": "#a27de7",
+        "light": "#6a89b8"
+      },
+      "ul-ol-li-before": {
+        "$kind$": "light",
+        "dark": "#ffffff",
+        "light": "#000000"
+      }
+    },
     "dependencies": {}
   },
   "ftd#mobile-breakpoint": {
@@ -319,8 +642,6 @@ pre code {
 .ft_md ul ol li:before {
     content: counter(item);
     counter-increment: item;
-    background-color: #e4e9eb;
-    color: #000000;
     font-size: 11px;
     line-height: 10px;
     text-align: center;
@@ -347,13 +668,9 @@ pre code {
 }
 
 .ft_md a {
-    color: #136351;
     text-decoration: none;
 }
 
-.ft_md a:visited {
-    color: #7b3ee8;
-}
 
 .ft_md a:hover {
     text-decoration: none;
@@ -361,14 +678,12 @@ pre code {
 
 .ft_md code {
     padding: 0.1rem 0.25rem;
-    background-color: #f6f7f8;
     border-radius: 4px;
 }
 
 .ft_md blockquote {
     padding: 0.25rem 1rem;
     margin: 1rem 0;
-    background-color: #f6f7f8;
     border-radius: 3px;
 }
 
@@ -376,40 +691,18 @@ pre code {
     margin: 0;
 }
 
-body.fpm-dark .ft_md code {
-    color: #f9f9f9;
-    background-color: rgba(255, 255, 255, 0.12);
-}
-
-body.fpm-dark .ft_md blockquote {
-    background-color: rgba(240, 240, 240, 0.12);
-}
-
 body.fpm-dark .ft_md a {
-    color: #25c19f;
     text-decoration: none;
 }
 
-body.fpm-dark .ft_md a:visited {
-    color: #0f5750;
-}
-
-body.fpm-dark .ft_md a code {
-    color: #25c19f;
-}
-
-body.fpm-dark .ft_md a:visited code {
-    color: #0f5750;
-}
-
 .b_1 {
-    background-color: rgba(255,255,255,1)
+    background-color: rgba(24,24,27,1)
 }
 
 
 
 .b_2 {
-    border-color: rgba(38,155,141,1)
+    border-color: rgba(45,212,191,1)
 }
 
 
@@ -433,13 +726,13 @@ body.fpm-dark .c_0 {
 
 
 .c_0 {
-    color: rgba(28,30,33,1)
+    color: rgba(168,162,158,1)
 }
 
 </style>
     </head>
     <body>
-        <div data-id="main:root" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; height: 100%; justify-content: flex-start; text-decoration: none; white-space: initial; width: 100%" ><h1 data-id="0:main" id="translation-status" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; padding-left: 90px; padding-right: 90px; text-decoration: none; white-space: initial; width: 100%" ><div data-id="0,0:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; padding-bottom: 24px; text-align: left; text-decoration: none; white-space: initial" class="c_0">Translation Status</div><div data-id="0,1:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: none; padding-bottom: 34px; padding-top: 50px; text-align: left; text-decoration: none; white-space: initial" class="c_0"></div></h1><h2 data-id="1:main" id="fifthtry-github-io-fpm-ui" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial; width: 100%" ><div data-id="1,0:main" data-spacing="margin-left:25px" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial; width: 100%" ><a data-id="1,0,0:main" href="https://fifthtry.github.io/fpm-ui" style="align-self: center; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; cursor: pointer; margin-bottom: auto; margin-top: auto; text-align: left; text-decoration: none; white-space: initial" class="c_0">fifthtry.github.io/fpm-ui</a><div data-id="1,0,1:main" style="align-self: center; border-radius: 10px; border-style: solid; border-width: 0px; box-sizing: border-box; display: none; margin-bottom: auto; margin-top: auto; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; padding-top: 5px; text-align: left; text-decoration: none; white-space: initial" class="b_1 c_0"></div></div><div data-id="1,1:main" data-spacing="margin-left:2px" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; margin-bottom: 10px; text-decoration: none; white-space: initial" ><div data-id="1,1,0:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; text-align: left; text-decoration: none; white-space: initial" >Last modified on:</div><div data-id="1,1,1:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: none; text-align: left; text-decoration: none; white-space: initial" ></div><div data-id="1,1,2:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; margin-left: 2px; text-align: left; text-decoration: none; white-space: initial" >Never synced</div></div><div data-id="1,2:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; padding-bottom: 34px; padding-top: 50px; text-align: left; text-decoration: none; white-space: initial" class="c_0">Here is the list of the translation status for the available languages.</div></h2><div data-id="2:main" data-spacing="margin-left:2px" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; margin-bottom: 10px; text-decoration: none; white-space: initial" ><div data-id="2,0:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; text-align: left; text-decoration: none; white-space: initial" >Total number of documents:</div><div data-id="2,1:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; margin-left: 2px; text-align: left; text-decoration: none; white-space: initial" >0</div><div data-id="2,2:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: none; margin-left: 2px; text-align: left; text-decoration: none; white-space: initial" >Not known</div></div><div data-id="3:main" style="align-items: flex-start; border-radius: 5px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; max-width: 1000px; text-decoration: none; white-space: initial; width: 100%" class="b_1"><div data-id="3,0:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-top-left-radius: 5px !important; border-top-right-radius: 5px !important; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; padding: 10px; text-decoration: none; white-space: initial; width: 100%" class="b_1 b_2"><div data-id="3,0,0:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; text-align: left; text-decoration: none; white-space: initial; width: 20%" >Language</div><div data-id="3,0,1:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; padding: 5px; text-align: left; text-decoration: none; white-space: initial; width: 20%" >Never marked</div><div data-id="3,0,2:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; padding: 5px; text-align: left; text-decoration: none; white-space: initial; width: 20%" >Missing</div><div data-id="3,0,3:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; padding: 5px; text-align: left; text-decoration: none; white-space: initial; width: 20%" >Out-dated</div><div data-id="3,0,4:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; padding: 5px; text-align: left; text-decoration: none; white-space: initial; width: 20%" >Up-to Date</div><div data-id="3,0,5:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; padding: 5px; text-align: left; text-decoration: none; white-space: initial; width: 20%" >Last modified on</div></div></div></div><style>
+        <div data-id="main:root" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; height: 100%; justify-content: flex-start; text-decoration: none; white-space: initial; width: 100%" ><h1 data-id="0:main" id="translation-status" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; padding-left: 90px; padding-right: 90px; text-decoration: none; white-space: initial; width: 100%" ><div data-id="0,0:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; padding-bottom: 24px; text-align: left; text-decoration: none; white-space: initial" class="c_0 ft_md">Translation Status</div><div data-id="0,1:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: none; padding-bottom: 34px; padding-top: 50px; text-align: left; text-decoration: none; white-space: initial" class="c_0 ft_md"></div></h1><h2 data-id="1:main" id="fifthtry-github-io-fpm-ui" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial; width: 100%" ><div data-id="1,0:main" data-spacing="margin-left:25px" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; text-decoration: none; white-space: initial; width: 100%" ><a data-id="1,0,0:main" href="https://fifthtry.github.io/fpm-ui" style="align-self: center; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; cursor: pointer; margin-bottom: auto; margin-top: auto; text-align: left; text-decoration: none; white-space: initial" class="c_0 ft_md">fifthtry.github.io/fpm-ui</a><div data-id="1,0,1:main" style="align-self: center; border-radius: 10px; border-style: solid; border-width: 0px; box-sizing: border-box; display: none; margin-bottom: auto; margin-top: auto; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; padding-top: 5px; text-align: left; text-decoration: none; white-space: initial" class="b_1 c_0 ft_md"></div></div><div data-id="1,1:main" data-spacing="margin-left:2px" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; margin-bottom: 10px; text-decoration: none; white-space: initial" ><div data-id="1,1,0:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; text-align: left; text-decoration: none; white-space: initial" class="ft_md">Last modified on:</div><div data-id="1,1,1:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: none; text-align: left; text-decoration: none; white-space: initial" class="ft_md"></div><div data-id="1,1,2:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; margin-left: 2px; text-align: left; text-decoration: none; white-space: initial" class="ft_md">Never synced</div></div><div data-id="1,2:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; padding-bottom: 34px; padding-top: 50px; text-align: left; text-decoration: none; white-space: initial" class="c_0 ft_md">Here is the list of the translation status for the available languages.</div></h2><div data-id="2:main" data-spacing="margin-left:2px" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; margin-bottom: 10px; text-decoration: none; white-space: initial" ><div data-id="2,0:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; text-align: left; text-decoration: none; white-space: initial" class="ft_md">Total number of documents:</div><div data-id="2,1:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; margin-left: 2px; text-align: left; text-decoration: none; white-space: initial" class="ft_md">0</div><div data-id="2,2:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: none; margin-left: 2px; text-align: left; text-decoration: none; white-space: initial" class="ft_md">Not known</div></div><div data-id="3:main" style="align-items: flex-start; border-radius: 5px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; max-width: 1000px; text-decoration: none; white-space: initial; width: 100%" class="b_1"><div data-id="3,0:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-top-left-radius: 5px !important; border-top-right-radius: 5px !important; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; padding: 10px; text-decoration: none; white-space: initial; width: 100%" class="b_1 b_2"><div data-id="3,0,0:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; text-align: left; text-decoration: none; white-space: initial; width: 20%" class="ft_md">Language</div><div data-id="3,0,1:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; padding: 5px; text-align: left; text-decoration: none; white-space: initial; width: 20%" class="ft_md">Never marked</div><div data-id="3,0,2:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; padding: 5px; text-align: left; text-decoration: none; white-space: initial; width: 20%" class="ft_md">Missing</div><div data-id="3,0,3:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; padding: 5px; text-align: left; text-decoration: none; white-space: initial; width: 20%" class="ft_md">Out-dated</div><div data-id="3,0,4:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; padding: 5px; text-align: left; text-decoration: none; white-space: initial; width: 20%" class="ft_md">Up-to Date</div><div data-id="3,0,5:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; padding: 5px; text-align: left; text-decoration: none; white-space: initial; width: 20%" class="ft_md">Last modified on</div></div></div></div><style>
 
 
 @font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
@@ -1850,7 +2143,9 @@ window.ftd = (function () {
     exports.get_value = function (id, variable) {
         let data = ftd_data[id];
 
-        if (!data[variable]) {
+        let var_name = ftd_utils.get_name_and_remaining(variable)[0];
+
+        if (!data[var_name]) {
             console_log(variable, "is not in data, ignoring");
             return;
         }
@@ -1961,7 +2256,8 @@ window.ftd.post_init = function () {
     const FTD_DESKTOP_BREAKPOINT = "ftd#desktop-breakpoint";
     const FTD_THEME_COLOR = "ftd#theme-color";
     const THEME_COLOR_META = "theme-color";
-
+    const MARKDOWN_COLOR = "ftd#markdown-color";
+    const MARKDOWN_BACKGROUND_COLOR = "ftd#markdown-background-color";
     let last_device;
 
     function initialise_device() {
@@ -1979,6 +2275,70 @@ window.ftd.post_init = function () {
         window.ftd.set_string_for_all(FTD_DEVICE, current);
         last_device = current;
         console_log("last_device", last_device);
+    }
+
+    function update_markdown_colors() {
+        // remove all colors from ftd.css: copy every deleted stuff in this function
+        let markdown_style_sheet = document.createElement('style');
+
+
+        markdown_style_sheet.innerHTML = `
+        .ft_md a {
+            color: ${window.ftd.get_value("main", MARKDOWN_COLOR + ".link.light")};
+            background-color: ${window.ftd.get_value("main", MARKDOWN_BACKGROUND_COLOR + ".link.light")};
+        }
+        body.fpm-dark .ft_md a {
+            color: ${window.ftd.get_value("main", MARKDOWN_COLOR + ".link.dark")};
+            background-color: ${window.ftd.get_value("main", MARKDOWN_BACKGROUND_COLOR + ".link.dark")};
+        }
+        
+        .ft_md code {
+            color: ${window.ftd.get_value("main", MARKDOWN_COLOR + ".code.light")};
+            background-color: ${window.ftd.get_value("main", MARKDOWN_BACKGROUND_COLOR + ".code.light")};
+        }
+        body.fpm-dark .ft_md code {
+            color: ${window.ftd.get_value("main", MARKDOWN_COLOR + ".code.dark")};
+            background-color: ${window.ftd.get_value("main", MARKDOWN_BACKGROUND_COLOR + ".code.dark")};
+        }        
+                
+        .ft_md a:visited {
+            color: ${window.ftd.get_value("main", MARKDOWN_COLOR + ".link-visited.light")};
+            background-color: ${window.ftd.get_value("main", MARKDOWN_BACKGROUND_COLOR + ".link-visited.light")};
+        }      
+        body.fpm-dark .ft_md a:visited {
+            color: ${window.ftd.get_value("main", MARKDOWN_COLOR + ".link-visited.dark")};
+            background-color: ${window.ftd.get_value("main", MARKDOWN_BACKGROUND_COLOR + ".link-visited.dark")};
+        }
+            
+        .ft_md a code {
+            color: ${window.ftd.get_value("main", MARKDOWN_COLOR + ".link-code.light")};
+            background-color: ${window.ftd.get_value("main", MARKDOWN_BACKGROUND_COLOR + ".link-code.light")};
+        }
+        body.fpm-dark .ft_md a code {
+            color: ${window.ftd.get_value("main", MARKDOWN_COLOR + ".link-code.dark")};
+            background-color: ${window.ftd.get_value("main", MARKDOWN_BACKGROUND_COLOR + ".link-code.dark")};
+        }
+                
+        .ft_md a:visited code {
+            color: ${window.ftd.get_value("main", MARKDOWN_COLOR + ".link-visited-code.light")};
+            background-color: ${window.ftd.get_value("main", MARKDOWN_BACKGROUND_COLOR + ".link-visited-code.light")};
+        }
+        body.fpm-dark .ft_md a:visited code {
+            color: ${window.ftd.get_value("main", MARKDOWN_COLOR + ".link-visited-code.dark")};
+            background-color: ${window.ftd.get_value("main", MARKDOWN_BACKGROUND_COLOR + ".link-visited-code.dark")};            
+        }
+        
+        .ft_md ul ol li:before {
+            color: ${window.ftd.get_value("main", MARKDOWN_COLOR + ".ul-ol-li-before.light")};
+            background-color: ${window.ftd.get_value("main", MARKDOWN_BACKGROUND_COLOR + ".ul-ol-li-before.light")};
+        }     
+        body.fpm-dark .ft_md ul ol li:before {
+            color: ${window.ftd.get_value("main", MARKDOWN_COLOR + ".ul-ol-li-before.dark")};
+            background-color: ${window.ftd.get_value("main", MARKDOWN_BACKGROUND_COLOR + ".ul-ol-li-before.dark")};
+        }     
+        `;
+
+        document.getElementsByTagName('head')[0].appendChild(markdown_style_sheet);
     }
 
     function get_device() {
@@ -2178,6 +2538,7 @@ window.ftd.post_init = function () {
     }
     initialise_dark_mode();
     initialise_device();
+    update_markdown_colors();
 };
 
             window.ftd.init("main", "ftd-data", "ftd-external-children");
