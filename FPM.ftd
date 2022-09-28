@@ -1,8 +1,7 @@
 -- import: fpm
 
--- fpm.package: fifthtry.github.io/fpm-ui
-zip: github.com/fifthtry/fpm-ui/archive/refs/heads/main.zip
-download-base-url: https://raw.githubusercontent.com/fifthtry/fpm-ui/main
+-- fpm.package: ftd-lang.github.io/fpm-ui
+download-base-url: https://raw.githubusercontent.com/ftd-lang/fpm-ui/main
 
 
 -- fpm.dependency: fifthtry.github.io/roboto-mono
