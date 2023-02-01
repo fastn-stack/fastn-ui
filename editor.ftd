@@ -473,8 +473,8 @@ boolean show-desktop: false
 boolean show-mobile: false
 boolean show-fullscreen: false
 boolean edits: true
-background-color: $fastn.color.main.background.step-2
-color: $fastn.color.main.text-strong
+background-color: $inherited.colors.main.background.step-2
+color: $inherited.colors.main.text-strong
 width: fill
 height: fill
 open: true
@@ -527,7 +527,7 @@ anchor: window
 left: 0
 left if $open: -700
 top: 0
-background-color: $fastn.color.main.background.base
+background-color: $inherited.colors.main.background.base
 
 --- ftd.row:
 background-color: $grey-dark
@@ -539,7 +539,7 @@ $on-mouse-leave$: $show-server-actions = false
 
 --- ftd.text: $fastn.package-name
 role: $copy-print-bold
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 width: fill
 
 --- ftd.row:
@@ -564,7 +564,7 @@ if: $show-cr-ui
 id: change-request
 width: fill
 background-color: $dark-grey
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 padding-vertical: $fastn.space.space-3
 padding-left: $fastn.space.space-3
 padding-right: 54
@@ -610,9 +610,9 @@ id: text-container
 width: fill
 $on-click$: $toc-show= true
 $on-click$: $sitemap-show= false
-background-color if $sitemap-show: $fastn.color.main.background.step-1
+background-color if $sitemap-show: $inherited.colors.main.background.step-1
 border-bottom if $sitemap-show: 1
-border-color if $sitemap-show: $fastn.color.main.border-strong
+border-color if $sitemap-show: $inherited.colors.main.border-strong
 padding-vertical: 8
 padding-horizontal: 16
 
@@ -628,9 +628,9 @@ align: center
 width: fill
 $on-click$: $toc-show= false
 $on-click$: $sitemap-show= true
-background-color if $toc-show: $fastn.color.main.background.step-1
+background-color if $toc-show: $inherited.colors.main.background.step-1
 border-bottom if $toc-show: 1
-border-color if $toc-show: $fastn.color.main.border-strong
+border-color if $toc-show: $inherited.colors.main.border-strong
 padding-vertical: 8
 padding-horizontal: 16
 
@@ -665,7 +665,7 @@ width if not $open: percent 75
 min-height: calc 100vh
 align: right
 margin-right: 0
-background-color: $fastn.color.main.background.step-1
+background-color: $inherited.colors.main.background.step-1
 
 --- ftd.column:
 width: calc 100% - 53px
@@ -691,11 +691,11 @@ spacing: 8
 
 --- ftd.text: $path
 role: $fine-print-bold
-color: $fastn.color.main.cta-primary.base
+color: $inherited.colors.main.cta-primary.base
 
 /--- ftd.text: (Preview)
 role: $fine-print-bold
-color: $fastn.color.main.cta-primary.base
+color: $inherited.colors.main.cta-primary.base
 white-space: nowrap
 
 --- container: switch-container
@@ -773,9 +773,9 @@ value: $source
 $on-input$: $source=$VALUE
 $on-input$: message-host $edit-obj
 $on-click$: $show-guide = true
-color: $fastn.color.main.text
+color: $inherited.colors.main.text
 role: $monospace
-background-color: $fastn.color.main.background.base
+background-color: $inherited.colors.main.background.base
 white-space: pre
 
 --- container: edit-input
@@ -789,14 +789,14 @@ if: $show-guide
 if: $show-desktop
 width: fill
 height: fill
-background-color: $fastn.color.main.text-strong
+background-color: $inherited.colors.main.text-strong
 
 --- ftd.iframe:
 src: $path
 width: fill
 min-width: percent 100
 min-height: calc 100vh - 52px
-background-color: $fastn.color.main.text-strong
+background-color: $inherited.colors.main.text-strong
 
 --- container: code-container
 
@@ -832,19 +832,19 @@ align: center
 
 --- ftd.text: iphone X
 role: $fastn.type.fine-print
-color: $fastn.color.main.cta-primary.base
+color: $inherited.colors.main.cta-primary.base
 
 /--- ftd.text: Iphone SE
 role: $fastn.type.fine-print
-color: $fastn.color.main.text
+color: $inherited.colors.main.text
 
 /--- ftd.text: Samsung Note
 role: $fastn.type.fine-print
-color: $fastn.color.main.text
+color: $inherited.colors.main.text
 
 /--- ftd.text: Samsung Galaxy
 role: $fastn.type.fine-print
-color: $fastn.color.main.text
+color: $inherited.colors.main.text
 
 --- container: left-side
 
@@ -854,7 +854,7 @@ height: fill
 padding-top: 16
 padding-bottom: 21
 id: main-sidebar
-background-color: $fastn.color.main.background.step-1
+background-color: $inherited.colors.main.background.step-1
 
 --- ftd.column:
 width: fill
@@ -1001,7 +1001,7 @@ id: mobile-frame
 if: $open
 width: percent 90
 anchor: window
-background-color: $fastn.color.main.background.base
+background-color: $inherited.colors.main.background.base
 height: fill
 id: right-side
 z-index: 99
@@ -1014,7 +1014,7 @@ width: fill
 
 --- ftd.text: $fastn.package-name
 role: $copy-print-bold
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 width: percent 75
 
 --- ftd.row:
@@ -1033,7 +1033,7 @@ anchor: window
 right: 0
 top: 0
 height: fill
-background-color: $fastn.color.main.background.step-1
+background-color: $inherited.colors.main.background.step-1
 width: 53
 padding-top: 20
 padding-left: 20
@@ -1052,7 +1052,7 @@ if: $show-cr-ui
 id: change-request
 width: fill
 background-color: $dark-grey
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 padding-vertical: $fastn.space.space-3
 padding-left: $fastn.space.space-3
 padding-right: 54
@@ -1098,9 +1098,9 @@ id: text-container
 width: fill
 $on-click$: $toc-show= true
 $on-click$: $sitemap-show= false
-background-color if $sitemap-show: $fastn.color.main.background.step-1
+background-color if $sitemap-show: $inherited.colors.main.background.step-1
 border-bottom if $sitemap-show: 1
-border-color if $sitemap-show: $fastn.color.main.border-strong
+border-color if $sitemap-show: $inherited.colors.main.border-strong
 padding-vertical: 8
 padding-horizontal: 16
 
@@ -1116,9 +1116,9 @@ align: center
 width: fill
 $on-click$: $toc-show= false
 $on-click$: $sitemap-show= true
-background-color if $toc-show: $fastn.color.main.background.step-1
+background-color if $toc-show: $inherited.colors.main.background.step-1
 border-bottom if $toc-show: 1
-border-color if $toc-show: $fastn.color.main.border-strong
+border-color if $toc-show: $inherited.colors.main.border-strong
 padding-vertical: 8
 padding-horizontal: 16
 
@@ -1151,7 +1151,7 @@ width if $open: percent 100
 width if not $open: percent 100
 width: fill
 height: fill
-background-color: $fastn.color.main.background.base
+background-color: $inherited.colors.main.background.base
 
 --- ftd.column:
 width: fill
@@ -1178,11 +1178,11 @@ spacing: 8
 
 --- ftd.text: $path
 role: $fine-print-bold
-color: $fastn.color.main.cta-primary.base
+color: $inherited.colors.main.cta-primary.base
 
 /--- ftd.text: (Preview)
 role: $fine-print-bold
-color: $fastn.color.main.cta-primary.base
+color: $inherited.colors.main.cta-primary.base
 white-space: nowrap
 
 --- container: switch-container
@@ -1251,8 +1251,8 @@ placeholder: -- ftd.text: hello world
 value: $source
 $on-input$: $source=$VALUE
 $on-input$: message-host $edit-obj
-color: $fastn.color.main.text
-background-color: $fastn.color.main.background.base
+color: $inherited.colors.main.text
+background-color: $inherited.colors.main.background.base
 white-space: pre
 
 --- container: code-container
@@ -1261,14 +1261,14 @@ white-space: pre
 if: $show-desktop
 width: fill
 height: fill
-background-color: $fastn.color.main.text-strong
+background-color: $inherited.colors.main.text-strong
 
 --- ftd.iframe:
 src: $path
 width: fill
 min-width: percent 100
 min-height: calc 100vh - 82px
-background-color: $fastn.color.main.text-strong
+background-color: $inherited.colors.main.text-strong
 
 --- container: code-container
 
@@ -1293,26 +1293,26 @@ align: center
 
 --- ftd.text: iphone X
 role: $fastn.type.fine-print
-color: $fastn.color.main.cta-primary.base
+color: $inherited.colors.main.cta-primary.base
 
 /--- ftd.text: Iphone SE
 role: $fastn.type.fine-print
-color: $fastn.color.main.text
+color: $inherited.colors.main.text
 
 /--- ftd.text: Samsung Note
 role: $fastn.type.fine-print
-color: $fastn.color.main.text
+color: $inherited.colors.main.text
 
 /--- ftd.text: Samsung Galaxy
 role: $fastn.type.fine-print
-color: $fastn.color.main.text
+color: $inherited.colors.main.text
 
 --- container: left-side
 
 --- ftd.column:
 if: not $edits
 anchor: window
-background-color: $fastn.color.main.background.step-1
+background-color: $inherited.colors.main.background.step-1
 right: 0
 bottom: 0
 width: 46
@@ -1417,7 +1417,7 @@ height: fill
 padding-top: 16
 padding-bottom: 21
 id: main-sidebar
-background-color: $fastn.color.main.background.step-1
+background-color: $inherited.colors.main.background.step-1
 margin-left: 16
 
 --- ftd.column:
@@ -1535,8 +1535,8 @@ spacing: 10
 padding: 10
 position: center
 border-radius: 8
-color: $fastn.color.main.cta-secondary.text
-background-color: $fastn.color.main.cta-secondary.base
+color: $inherited.colors.main.cta-secondary.text
+background-color: $inherited.colors.main.cta-secondary.base
 $on-click$: message-host $sync-obj
 
 
@@ -1568,8 +1568,8 @@ spacing: 10
 padding: 10
 position: center
 border-radius: 8
-color: $fastn.color.main.cta-tertiary.text
-background-color: $fastn.color.main.cta-tertiary.base
+color: $inherited.colors.main.cta-tertiary.text
+background-color: $inherited.colors.main.cta-tertiary.base
 $on-click$: message-host $view-obj
 
 
@@ -1611,8 +1611,8 @@ border-radius: 8
 
 --- ftd.text: Create
 $on-click$: message-host $create-obj
-color: $fastn.color.main.cta-primary.text
-background-color: $fastn.color.main.cta-primary.base
+color: $inherited.colors.main.cta-primary.text
+background-color: $inherited.colors.main.cta-primary.base
 padding: 10
 align: center
 border-radius: 8
@@ -1695,13 +1695,13 @@ left: 370
 left if $is-mobile: 12
 top: 84
 z-index: 99999
-background-color: $fastn.color.main.background.step-2
+background-color: $inherited.colors.main.background.step-2
 border-radius: 4
 id: newfile-row
 
 --- ftd.row:
 width: fill
-background-color: $fastn.color.main.background.step-2
+background-color: $inherited.colors.main.background.step-2
 padding-left: 10
 padding-right: 5
 padding-vertical: 3
@@ -1709,14 +1709,14 @@ border-radius: 4
 
 --- ftd.text: New folder
 role: $tiny
-color: $fastn.color.main.cta-primary.base
+color: $inherited.colors.main.cta-primary.base
 margin-right: $fastn.space.space-2
 align: center
 white-space: nowrap
 
 --- ftd.row:
 width: fill
-background-color: $fastn.color.main.background.step-1
+background-color: $inherited.colors.main.background.step-1
 
 --- ftd.input:
 width: fill
@@ -1724,8 +1724,8 @@ placeholder: folder name
 $on-input$: $create-file-path=$VALUE
 padding-horizontal: 10
 padding-vertical: $fastn.space.space-2
-background-color: $fastn.color.main.background.step-1
-color: $fastn.color.main.text-strong
+background-color: $inherited.colors.main.background.step-1
+color: $inherited.colors.main.text-strong
 border-width: 0
 cursor: text
 
@@ -1742,7 +1742,7 @@ top: -12
 z-index: 9999
 width: 16
 height: 16
-background-color: $fastn.color.main.background.step-2
+background-color: $inherited.colors.main.background.step-2
 border-width: 1
 border-color: $grey-dark
 padding: 3
@@ -1793,13 +1793,13 @@ left: 370
 left if $is-mobile: 12
 top: 84
 z-index: 10000
-background-color: $fastn.color.main.background.step-2
+background-color: $inherited.colors.main.background.step-2
 border-radius: 4
 id: newfile-row
 
 --- ftd.row:
 width: fill
-background-color: $fastn.color.main.background.step-2
+background-color: $inherited.colors.main.background.step-2
 padding-left: 10
 padding-right: 5
 padding-vertical: 3
@@ -1807,14 +1807,14 @@ border-radius: 4
 
 --- ftd.text: New file
 role: $tiny
-color: $fastn.color.main.cta-primary.base
+color: $inherited.colors.main.cta-primary.base
 margin-right: $fastn.space.space-2
 align: center
 white-space: nowrap
 
 --- ftd.row:
 width: fill
-background-color: $fastn.color.main.background.step-1
+background-color: $inherited.colors.main.background.step-1
 
 --- ftd.input:
 width: fill
@@ -1822,8 +1822,8 @@ placeholder: filename.ftd
 $on-input$: $create-file-path=$VALUE
 padding-horizontal: 10
 padding-vertical: $fastn.space.space-2
-background-color: $fastn.color.main.background.step-1
-color: $fastn.color.main.text-strong
+background-color: $inherited.colors.main.background.step-1
+color: $inherited.colors.main.text-strong
 border-width: 0
 cursor: text
 
@@ -1840,7 +1840,7 @@ top: -12
 z-index: 9999
 width: 16
 height: 16
-background-color: $fastn.color.main.background.step-2
+background-color: $inherited.colors.main.background.step-2
 border-width: 1
 border-color: $grey-dark
 padding: 3
@@ -2058,13 +2058,13 @@ left: 370
 left if $is-mobile: 12
 top: 84
 z-index: 10000
-background-color: $fastn.color.main.background.step-2
+background-color: $inherited.colors.main.background.step-2
 border-radius: 4
 id: rename-row
 
 --- ftd.row:
 width: fill
-background-color: $fastn.color.main.background.step-2
+background-color: $inherited.colors.main.background.step-2
 padding-left: 10
 padding-right: 5
 padding-vertical: 3
@@ -2072,13 +2072,13 @@ border-radius: 4
 
 --- ftd.text: Rename
 role: $tiny
-color: $fastn.color.main.cta-primary.base
+color: $inherited.colors.main.cta-primary.base
 margin-right: $fastn.space.space-2
 align: center
 
 --- ftd.row:
 width: fill
-background-color: $fastn.color.main.background.step-1
+background-color: $inherited.colors.main.background.step-1
 
 --- ftd.input:
 width: fill
@@ -2088,8 +2088,8 @@ $on-input$: $new-name=$VALUE
 $on-input$: $rename-file-path=$rename-path
 padding-horizontal: 10
 padding-vertical: $fastn.space.space-2
-background-color: $fastn.color.main.background.step-1
-color: $fastn.color.main.text-strong
+background-color: $inherited.colors.main.background.step-1
+color: $inherited.colors.main.text-strong
 border-width: 0
 cursor: text
 
@@ -2106,7 +2106,7 @@ top: -12
 z-index: 9999
 width: 16
 height: 16
-background-color: $fastn.color.main.background.step-2
+background-color: $inherited.colors.main.background.step-2
 border-width: 1
 border-color: $grey-dark
 padding: 3
@@ -2146,13 +2146,13 @@ $on-mouse-enter$: $show-revert = false
 --- ftd.text: $title
 if: $link is not null
 link: $link
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 role: $monospace
 width: fill
 
 --- ftd.text: $title
 if: $link is null
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 role: $monospace
 width: fill
 
@@ -2174,14 +2174,14 @@ $on-mouse-enter$: $show-revert = false
 --- ftd.text: $title
 if: $link is not null
 link: $link
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 role: $monospace
 white-space: nowrap
 width: fill
 
 --- ftd.text: $title
 if: $link is null
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 role: $monospace
 width: fill
 
@@ -2204,13 +2204,13 @@ color: $merge
 if: $link is not null
 link: $link
 width: fill
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 role: $monospace
 
 --- ftd.text: $title
 if: $link is null
 width: fill
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 role: $monospace
 
 --- ftd.text: M
@@ -2232,13 +2232,13 @@ $on-mouse-enter$: $show-action-on-status = false
 if: $link is not null
 link: $link
 width: fill
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 role: $monospace
 
 --- ftd.text: $title
 if: $link is null
 width: fill
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 role: $monospace
 
 --- ftd.text: D
@@ -2260,13 +2260,13 @@ $on-mouse-enter$: $show-action-on-status = true
 if: $link is not null
 link: $link
 width: fill
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 role: $monospace
 
 --- ftd.text: $title
 if: $link is null
 width: fill
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 role: $monospace
 
 --- ftd.text: C
@@ -2288,13 +2288,13 @@ $on-mouse-enter$: $show-action-on-status = true
 if: $link is not null
 link: $link
 width: fill
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 role: $monospace
 
 --- ftd.text: $title
 if: $link is null
 width: fill
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 role: $monospace
 
 --- ftd.text: O
@@ -2316,13 +2316,13 @@ $on-mouse-enter$: $show-action-on-status = true
 if: $link is not null
 link: $link
 width: fill
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 role: $monospace
 
 --- ftd.text: $title
 if: $link is null
 width: fill
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 role: $monospace
 
 --- ftd.text: Cˆ
@@ -2344,13 +2344,13 @@ $on-mouse-enter$: $show-action-on-status = true
 if: $link is not null
 link: $link
 width: fill
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 role: $monospace
 
 --- ftd.text: $title
 if: $link is null
 width: fill
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 role: $monospace
 
 --- ftd.text: C˘
@@ -2371,13 +2371,13 @@ $on-mouse-enter$: $show-action-on-status = true
 if: $link is not null
 link: $link
 width: fill
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 role: $monospace
 
 --- ftd.text: $title
 width: fill
 if: $link is null
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 role: $monospace
 
 
@@ -2410,7 +2410,7 @@ id: iamoverlay
 
 -- ftd.row guide-80chars:
 border-right: 1
-border-color: $fastn.color.main.border
+border-color: $inherited.colors.main.border
 height: calc 100vh - 52px
 anchor: parent
 top: 0
@@ -2458,7 +2458,7 @@ margin-bottom: $fastn.space.space-1
 
 --- ftd.text: $subtitle
 role: $fastn.type.fine-print
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 margin-bottom: $fastn.space.space-2
 
 --- container: title-container
@@ -2477,7 +2477,7 @@ value: $source
 $on-input$: $source=$VALUE
 $on-input$: message-host $edit-obj
 background-color: $code-bg
-color: $fastn.color.main.text
+color: $inherited.colors.main.text
 white-space: pre
 
 --- container: code-container
@@ -2492,7 +2492,7 @@ spacing: 24
 
 --- ftd.text: $close
 role: $dialog-title
-color: $fastn.color.main.text
+color: $inherited.colors.main.text
 $on-click$: $show-delete-dialog = false
 $on-click$: $show-overlay = false
 $on-click$: $dialog-open = false
@@ -2650,13 +2650,13 @@ spacing: 8
 
 --- ftd.text: $title
 if: $link is not null
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 role: $monospace
 white-space: nowrap
 
 --- ftd.text: $title
 if: $link is null
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 role: $monospace
 white-space: nowrap
 
@@ -2668,7 +2668,7 @@ padding-vertical: $fastn.space.space-1
 padding-horizontal: $fastn.space.space-1
 border-radius: 100
 margin-top: 4
-background-color: $fastn.color.main.text
+background-color: $inherited.colors.main.text
 $on-mouse-enter$: $show-tooltip = true
 $on-mouse-leave$: $show-tooltip = false
 
@@ -2748,17 +2748,17 @@ width:fill
 
 --- ftd.text: Key
 role: $small-font
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 
 --- ftd.text: :
 role: $small-font
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 
 --- container: text-container
 
 --- ftd.text: value
 role: $small-font
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 width: fill
 
 --- container:  key-container
@@ -2775,17 +2775,17 @@ width:fill
 
 --- ftd.text: Key
 role: $small-font
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 
 --- ftd.text: :
 role: $small-font
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 
 --- container: text-container
 
 --- ftd.text: value
 role: $small-font
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 width: fill
 
 
@@ -2984,13 +2984,13 @@ spacing: 8
 
 --- ftd.text: $title
 if: $link is not null
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 role: $monospace
 white-space: nowrap
 
 --- ftd.text: $title
 if: $link is null
-color: $fastn.color.main.text-strong
+color: $inherited.colors.main.text-strong
 role: $monospace
 white-space: nowrap
 
