@@ -1,4 +1,4 @@
--- import: fpm
+-- import: fastn
 
 -- import: fifthtry.github.io/roboto-mono/assets as mono
 
@@ -22,7 +22,7 @@
 
 -- boolean show-datas: false
 
--- boolean is-mobile: false
+-- boolean $is-mobile: false
 
 -- boolean show-rename: false
 
@@ -38,7 +38,7 @@
 
 -- boolean show-revert: true
 
--- fpm.toc-item list fs:
+-- fastn.toc-item list fs:
 $processor$: package-tree
 
 -- optional string source:
@@ -60,7 +60,7 @@ path: $path
 -- optional string diff:
 $always-include$: true
 
--- fpm.toc-item list sample-toc:
+-- fastn.toc-item list sample-toc:
 $processor$: toc
 
 -level:
@@ -92,256 +92,256 @@ $processor$: toc
   - item-three: /
   - item-four: /
 
--- fpm.toc-item list sample-list:
+-- fastn.toc-item list sample-list:
 $processor$: toc
 
 - Home: 
-  url: https://fpm.dev/
+  url: https://fastn.dev/
   - Features: 
-    url: https://fpm.dev/about/
+    url: https://fastn.dev/about/
     - Package Manager: 
-      url: https://fpm.dev/package-manager/
+      url: https://fastn.dev/package-manager/
     - Remixing Sites: 
-      url: https://fpm.dev/remixing/
+      url: https://fastn.dev/remixing/
   - Open Source: 
-    url: https://fpm.dev/open-source/
-  - Why Not To Use `fpm`?: 
-    url: https://fpm.dev/why-not/
+    url: https://fastn.dev/open-source/
+  - Why Not To Use `fastn`?: 
+    url: https://fastn.dev/why-not/
   - Open Source: 
-    url: https://fpm.dev/open-source/
+    url: https://fastn.dev/open-source/
   - Known Issues: 
-    url: https://fpm.dev/known-issues/
+    url: https://fastn.dev/known-issues/
 - Author Manual: 
-  url: https://fpm.dev/author/
-  - Create new fpm project: 
-    url: https://fpm.dev/author/create-project/
-    - Create new fpm project on github: 
-      url: https://fpm.dev/author/create-on-github/
-  - How to install fpm on local machine:
-    url: https://fpm.dev/how-to/install/
-  - Build fpm project locally:
-    url: https://fpm.dev/author/build-project/
+  url: https://fastn.dev/author/
+  - Create new fastn project: 
+    url: https://fastn.dev/author/create-project/
+    - Create new fastn project on github: 
+      url: https://fastn.dev/author/create-on-github/
+  - How to install fastn on local machine:
+    url: https://fastn.dev/how-to/install/
+  - Build fastn project locally:
+    url: https://fastn.dev/author/build-project/
   - Featured Components:
-    url: https://fpm.dev/featured/
+    url: https://fastn.dev/featured/
   - How To:
-    url: https://fpm.dev/how-to/
-    - Install `fpm`:
-      url: https://fpm.dev/how-to/install/
-    - Update `fpm`:
-      url: https://fpm.dev/how-to/update/
+    url: https://fastn.dev/how-to/
+    - Install `fastn`:
+      url: https://fastn.dev/how-to/install/
+    - Update `fastn`:
+      url: https://fastn.dev/how-to/update/
     - Get started with Github pages:
-      url: https://fpm.dev/how-to/get-started-github-pages/
+      url: https://fastn.dev/how-to/get-started-github-pages/
     - Get started with Vercel:
-      url: https://fpm.dev/how-to/get-started-vercel/
-  - `fpm` Usage:
-    url: https://fpm.dev/usage/
-    - `fpm start-project`:
-      url: https://fpm.dev/start-project/
-    - `fpm build`:
-      url: https://fpm.dev/build/
-    - `fpm sync`:
-      url: https://fpm.dev/sync/
-    - `fpm status`:
-      url: https://fpm.dev/status/
-    - `fpm diff`:
-      url: https://fpm.dev/diff/
-    - `fpm update`:
-      url: https://fpm.dev/update/
-    - `fpm serve`:
-      url: https://fpm.dev/serve/
+      url: https://fastn.dev/how-to/get-started-vercel/
+  - `fastn` Usage:
+    url: https://fastn.dev/usage/
+    - `fastn start-project`:
+      url: https://fastn.dev/start-project/
+    - `fastn build`:
+      url: https://fastn.dev/build/
+    - `fastn sync`:
+      url: https://fastn.dev/sync/
+    - `fastn status`:
+      url: https://fastn.dev/status/
+    - `fastn diff`:
+      url: https://fastn.dev/diff/
+    - `fastn update`:
+      url: https://fastn.dev/update/
+    - `fastn serve`:
+      url: https://fastn.dev/serve/
 - Themes Guide:
-  url: https://fpm.dev/themes/
+  url: https://fastn.dev/themes/
   - About Themes:
-    url: https://fpm.dev/themes/
+    url: https://fastn.dev/themes/
   - Package Interface:
-    url: https://fpm.dev/package-interface/
+    url: https://fastn.dev/package-interface/
   - Theme Config:
-    url: https://fpm.dev/theme/config/
+    url: https://fastn.dev/theme/config/
   - Responsive Themes:
-    url: https://fpm.dev/theme/responsive/
+    url: https://fastn.dev/theme/responsive/
   - Dark Mode:
-    url: https://fpm.dev/theme/dark-mode/
+    url: https://fastn.dev/theme/dark-mode/
   - Components:
-    url: https://fpm.dev/theme/header/
+    url: https://fastn.dev/theme/header/
     - Dark Mode:
-      url: https://fpm.dev/theme/header/
-  - FPM Variables:
-    url: https://fpm.devvars/
-  - FPM Typography:
-    url: https://fpm.dev/theme/type/
-  - FPM Color:
-    url: https://fpm.dev/theme/color/
-  - FPM Space:
-    url: https://fpm.dev/theme/space/
+      url: https://fastn.dev/theme/header/
+  - FASTN Variables:
+    url: https://fastn.devvars/
+  - FASTN Typography:
+    url: https://fastn.dev/theme/type/
+  - FASTN Color:
+    url: https://fastn.dev/theme/color/
+  - FASTN Space:
+    url: https://fastn.dev/theme/space/
   - How to use Google Font:
-    url: https://fpm.dev/theme/google-font-how-to-use/
-  - FPM Sitemap:
-    url: https://fpm.dev/sitemap/
+    url: https://fastn.dev/theme/google-font-how-to-use/
+  - FASTN Sitemap:
+    url: https://fastn.dev/sitemap/
   - FTD Host Features:
-    url: https://fpm.dev/ftd-host/
+    url: https://fastn.dev/ftd-host/
     - `$processor$:
-      url: https://fpm.dev/http/
+      url: https://fastn.dev/http/
     - `$processor$:
-      url: https://fpm.dev /toc/
+      url: https://fastn.dev /toc/
     - `$processor$:
-      url: https://fpm.dev/package-query/
+      url: https://fastn.dev/package-query/
     - `$processor$:
-      url: https://fpm.dev/processors/get-data/
+      url: https://fastn.dev/processors/get-data/
     - `$processor$:
-      url: https://fpm.dev/processors/sitemap/
+      url: https://fastn.dev/processors/sitemap/
     - `import:
-      url: https://fpm.dev/fpm-vars/
+      url: https://fastn.dev/fastn-vars/
     - Foreign Variables:
-      url: https://fpm.dev/theme/foreign-variables/
+      url: https://fastn.dev/theme/foreign-variables/
 
 - Development:
-  url: https://fpm.dev/journal/
+  url: https://fastn.dev/journal/
   - Overview:
-    url: https://fpm.dev/journal/
+    url: https://fastn.dev/journal/
     - Roadmap:
-      url: https://fpm.dev/roadmap/
+      url: https://fastn.dev/roadmap/
     - Journal:
-      url: https://fpm.dev/journal/
+      url: https://fastn.dev/journal/
     - Contribution Guide:
-      url: https://fpm.dev/contribute/
+      url: https://fastn.dev/contribute/
     - How Versioning Works:
-      url: https://fpm.dev/versioning/
-    - What is `fpm`.manifest.ftd`?:
-      url: https://fpm.dev/fpm-manifest/
+      url: https://fastn.dev/versioning/
+    - What is `fastn`.manifest.ftd`?:
+      url: https://fastn.dev/fastn-manifest/
     - File System Organization:
-      url: https://fpm.dev/fs/
-      - `fpm`.ftd`:
-        url: https://fpm.dev/fpm-ftd-file/
+      url: https://fastn.dev/fs/
+      - `fastn`.ftd`:
+        url: https://fastn.dev/fastn-ftd-file/
     - Day To Day:
-      url: https://fpm.dev
+      url: https://fastn.dev
       - How To Run Tests:
-        url: https://fpm.dev/day-to-day/how-to-run-tests/
+        url: https://fastn.dev/day-to-day/how-to-run-tests/
       - How To Update Failing Snapshot Tests:
-        url: https://fpm.dev/day-to-day/how-to-fix-tests/
+        url: https://fastn.dev/day-to-day/how-to-fix-tests/
     - Sitemap:
       - `serve`:
-        url: https://fpm.dev/sitemap/serve/
+        url: https://fastn.dev/sitemap/serve/
       - `static`:
-        url: https://fpm.dev/sitemap/static/
+        url: https://fastn.dev/sitemap/static/
       - `favicon.ico`:
-        url: https://fpm.dev/sitemap/favicon/
+        url: https://fastn.dev/sitemap/favicon/
       - `sync` API:
-        url: https://fpm.dev/sitemap/sync/
-  - Using `fpm` Crate:
-    url: https://fpm.dev/crate/
+        url: https://fastn.dev/sitemap/sync/
+  - Using `fastn` Crate:
+    url: https://fastn.dev/crate/
     - Overview:
-      url: https://fpm.dev/crate/
-    - `fpm::Config`:
-      url: https://fpm.dev/crate/config/
-    - `fpm::Document`:
-      url: https://fpm.dev/crate/document/
-    -`fpm::Error`:
-      url: https://fpm.dev/crate/error/
-    -`fpm::File`:
-      url: https://fpm.dev/crate/file/
-    -`fpm::Font`:
-      url: https://fpm.dev/crate/font/
-    -`fpm::Package`:
-      url: https://fpm.dev/crate/package/
-    -`fpm::render`:
-      url: https://fpm.dev/crate/render/
-    -`fpm::Result`:
-      url: https://fpm.dev/crate/result/
-    -`fpm::StaticFile`:
-      url: https://fpm.dev/crate/static-file/
+      url: https://fastn.dev/crate/
+    - `fastn::Config`:
+      url: https://fastn.dev/crate/config/
+    - `fastn::Document`:
+      url: https://fastn.dev/crate/document/
+    -`fastn::Error`:
+      url: https://fastn.dev/crate/error/
+    -`fastn::File`:
+      url: https://fastn.dev/crate/file/
+    -`fastn::Font`:
+      url: https://fastn.dev/crate/font/
+    -`fastn::Package`:
+      url: https://fastn.dev/crate/package/
+    -`fastn::render`:
+      url: https://fastn.dev/crate/render/
+    -`fastn::Result`:
+      url: https://fastn.dev/crate/result/
+    -`fastn::StaticFile`:
+      url: https://fastn.dev/crate/static-file/
     -Private Stuff:
-      -`fpm::utils`:
-        url: https://fpm.dev/crate/utils/
+      -`fastn::utils`:
+        url: https://fastn.dev/crate/utils/
     - Dependencies:
       - `ftd`:
-        url: https://fpm.dev/crate/deps/ftd/
+        url: https://fastn.dev/crate/deps/ftd/
       - `fbt-lib`:
-        url: https://fpm.dev/crate/deps/fbt-lib/
+        url: https://fastn.dev/crate/deps/fbt-lib/
       - `camino`:
-        url: https://fpm.dev/crate/deps/camino/
+        url: https://fastn.dev/crate/deps/camino/
       - `infer`:
-        url: https://fpm.dev/crate/deps/infer/
+        url: https://fastn.dev/crate/deps/infer/
 
--- is-mobile:true
-if: $ftd.device == mobile
+-- $is-mobile: true
+if: { ftd.device == mobile }
 
--- ftd.image-src downarrow: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/downarrow.svg
-dark: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/downarrow.svg
+-- ftd.image-src downarrow: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/downarrow.svg
+dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/downarrow.svg
 
--- ftd.image-src close: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/cross.svg
-dark: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/cross.svg
+-- ftd.image-src close: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/cross.svg
+dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/cross.svg
 
--- ftd.image-src edit: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/edit.svg
-dark: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/edit.svg
+-- ftd.image-src edit: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/edit.svg
+dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/edit.svg
 
--- ftd.image-src e-active: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/e-active.svg
-dark: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/e-active.svg
+-- ftd.image-src e-active: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/e-active.svg
+dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/e-active.svg
 
--- ftd.image-src m-active: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/m-active.svg
-dark: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/m-active.svg
+-- ftd.image-src m-active: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/m-active.svg
+dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/m-active.svg
 
--- ftd.image-src edit-default: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/edit-icon-default.svg
-dark: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/edit-icon-default.svg
+-- ftd.image-src edit-default: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/edit-icon-default.svg
+dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/edit-icon-default.svg
 
--- ftd.image-src file: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/file.svg
-dark: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/file.svg
+-- ftd.image-src file: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/file.svg
+dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/file.svg
 
--- ftd.image-src refresh: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/refresh.svg
-dark: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/refresh.svg
+-- ftd.image-src refresh: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/refresh.svg
+dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/refresh.svg
 
--- ftd.image-src mobile-active: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/mobile-active.svg
-dark: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/mobile-active.svg
+-- ftd.image-src mobile-active: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/mobile-active.svg
+dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/mobile-active.svg
 
--- ftd.image-src mobile: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/mobile.svg
-dark: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/mobile.svg
+-- ftd.image-src mobile: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/mobile.svg
+dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/mobile.svg
 
--- ftd.image-src file-icon: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/new-file-icon.svg
-dark: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/new-file-icon.svg
+-- ftd.image-src file-icon: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/new-file-icon.svg
+dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/new-file-icon.svg
 
--- ftd.image-src folder-icon: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/folder-icon.svg
-dark: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/folder-icon.svg
+-- ftd.image-src folder-icon: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/folder-icon.svg
+dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/folder-icon.svg
 
--- ftd.image-src right-arrow: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/right-arrow.svg
-dark: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/right-arrow.svg
+-- ftd.image-src right-arrow: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/right-arrow.svg
+dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/right-arrow.svg
 
--- ftd.image-src rename-icon: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/edit-icon.svg
-dark: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/edit-icon.svg
+-- ftd.image-src rename-icon: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/edit-icon.svg
+dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/edit-icon.svg
 
--- ftd.image-src server-icon: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/server.svg
-dark: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/server.svg
+-- ftd.image-src server-icon: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/server.svg
+dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/server.svg
 
--- ftd.image-src local-icon: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/local.svg
-dark: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/local.svg
+-- ftd.image-src local-icon: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/local.svg
+dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/local.svg
 
--- ftd.image-src pull-request-icon: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/git-pull-request.svg
-dark: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/git-pull-request.svg
+-- ftd.image-src pull-request-icon: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/git-pull-request.svg
+dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/git-pull-request.svg
 
--- ftd.image-src delete-icon: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/delete-icon.svg
-dark: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/delete-icon.svg
+-- ftd.image-src delete-icon: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/delete-icon.svg
+dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/delete-icon.svg
 
--- ftd.image-src arrow-right: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/arrow-right.png
-dark: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/arrow-right.png
+-- ftd.image-src arrow-right: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/arrow-right.png
+dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/arrow-right.png
 
--- ftd.image-src desktop: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/desktop.svg
-dark: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/desktop.svg
+-- ftd.image-src desktop: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/desktop.svg
+dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/desktop.svg
 
--- ftd.image-src desktop-active: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/desktop-active.svg
-dark: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/desktop-active.svg
+-- ftd.image-src desktop-active: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/desktop-active.svg
+dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/desktop-active.svg
 
--- ftd.image-src mobile-frame: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/mobile-frame.png
-dark: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/mobile-frame.png
+-- ftd.image-src mobile-frame: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/mobile-frame.png
+dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/mobile-frame.png
 
--- ftd.image-src sync-img: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/sync.svg
-dark: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/sync.svg
+-- ftd.image-src sync-img: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/sync.svg
+dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/sync.svg
 
--- ftd.image-src showbar: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/showbar.svg
-dark: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/showbar.svg
+-- ftd.image-src showbar: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/showbar.svg
+dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/showbar.svg
 
--- ftd.image-src m-default: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/m-default.svg
-dark: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/m-default.svg
+-- ftd.image-src m-default: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/m-default.svg
+dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/m-default.svg
 
--- ftd.image-src e-default: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/e-default.svg
-dark: https://fifthtry.github.io/fpm-ui/-/fifthtry.github.io/fpm-ui/e-default.svg
+-- ftd.image-src e-default: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/e-default.svg
+dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/e-default.svg
 
 
 
@@ -352,7 +352,7 @@ line-height: 16
 size: 12
 letter-spacing: 0
 
--- ftd.type fine-print: $fpm.font-display
+-- ftd.type fine-print: $fastn.font-display
 desktop: $fine-print-desktop
 mobile: $fine-print-desktop
 xl: $fine-print-desktop
@@ -363,7 +363,7 @@ line-height: 24
 size: 16
 letter-spacing: 0
 
--- ftd.type copy-print-medium: $fpm.font-display
+-- ftd.type copy-print-medium: $fastn.font-display
 desktop: $copy-print-medium-desktop
 mobile: $copy-print-medium-desktop
 xl: $copy-print-medium-desktop
@@ -385,7 +385,7 @@ line-height: 14
 size: 12
 letter-spacing: 0
 
--- ftd.type small-font: $fpm.font-display
+-- ftd.type small-font: $fastn.font-display
 desktop: $small-desktop
 mobile: $small-desktop
 xl: $small-desktop
@@ -396,7 +396,7 @@ line-height: 18
 size: 14
 letter-spacing: 0
 
--- ftd.type fine-print-bold: $fpm.font-display
+-- ftd.type fine-print-bold: $fastn.font-display
 desktop: $fine-print-bold-desktop
 mobile: $fine-print-bold-desktop
 xl: $fine-print-bold-desktop
@@ -407,7 +407,7 @@ line-height: 16
 size: 13
 letter-spacing: 0
 
--- ftd.type tiny: $fpm.font-display
+-- ftd.type tiny: $fastn.font-display
 desktop: $tiny-font
 mobile: $tiny-font
 xl: $tiny-font
@@ -418,7 +418,7 @@ line-height: 16
 size: 20
 letter-spacing: 0
 
--- ftd.type copy-print-bold: $fpm.font-display
+-- ftd.type copy-print-bold: $fastn.font-display
 desktop: $copy-print-bold-desktop
 mobile: $copy-print-bold-desktop
 xl: $copy-print-bold-desktop
@@ -429,7 +429,7 @@ line-height: 20
 size: 14
 letter-spacing: 0
 
--- ftd.type dialog-title: $fpm.font-display
+-- ftd.type dialog-title: $fastn.font-display
 desktop: $dialog-title-bold
 mobile: $dialog-title-bold
 xl: $dialog-title-bold
@@ -473,8 +473,8 @@ boolean show-desktop: false
 boolean show-mobile: false
 boolean show-fullscreen: false
 boolean edits: true
-background-color: $fpm.color.main.background.step-2
-color: $fpm.color.main.text-strong
+background-color: $fastn.color.main.background.step-2
+color: $fastn.color.main.text-strong
 width: fill
 height: fill
 open: true
@@ -527,19 +527,19 @@ anchor: window
 left: 0
 left if $open: -700
 top: 0
-background-color: $fpm.color.main.background.base
+background-color: $fastn.color.main.background.base
 
 --- ftd.row:
 background-color: $grey-dark
-padding-vertical: $fpm.space.space-3
-padding-horizontal: $fpm.space.space-3
+padding-vertical: $fastn.space.space-3
+padding-horizontal: $fastn.space.space-3
 width: fill
 $on-mouse-enter$: $show-server-actions = true
 $on-mouse-leave$: $show-server-actions = false
 
---- ftd.text: $fpm.package-name
+--- ftd.text: $fastn.package-name
 role: $copy-print-bold
-color: $fpm.color.main.text-strong
+color: $fastn.color.main.text-strong
 width: fill
 
 --- ftd.row:
@@ -564,9 +564,9 @@ if: $show-cr-ui
 id: change-request
 width: fill
 background-color: $dark-grey
-color: $fpm.color.main.text-strong
-padding-vertical: $fpm.space.space-3
-padding-left: $fpm.space.space-3
+color: $fastn.color.main.text-strong
+padding-vertical: $fastn.space.space-3
+padding-left: $fastn.space.space-3
 padding-right: 54
 spacing:4
 
@@ -610,9 +610,9 @@ id: text-container
 width: fill
 $on-click$: $toc-show= true
 $on-click$: $sitemap-show= false
-background-color if $sitemap-show: $fpm.color.main.background.step-1
+background-color if $sitemap-show: $fastn.color.main.background.step-1
 border-bottom if $sitemap-show: 1
-border-color if $sitemap-show: $fpm.color.main.border-strong
+border-color if $sitemap-show: $fastn.color.main.border-strong
 padding-vertical: 8
 padding-horizontal: 16
 
@@ -628,9 +628,9 @@ align: center
 width: fill
 $on-click$: $toc-show= false
 $on-click$: $sitemap-show= true
-background-color if $toc-show: $fpm.color.main.background.step-1
+background-color if $toc-show: $fastn.color.main.background.step-1
 border-bottom if $toc-show: 1
-border-color if $toc-show: $fpm.color.main.border-strong
+border-color if $toc-show: $fastn.color.main.border-strong
 padding-vertical: 8
 padding-horizontal: 16
 
@@ -665,7 +665,7 @@ width if not $open: percent 75
 min-height: calc 100vh
 align: right
 margin-right: 0
-background-color: $fpm.color.main.background.step-1
+background-color: $fastn.color.main.background.step-1
 
 --- ftd.column:
 width: calc 100% - 53px
@@ -691,11 +691,11 @@ spacing: 8
 
 --- ftd.text: $path
 role: $fine-print-bold
-color: $fpm.color.main.cta-primary.base
+color: $fastn.color.main.cta-primary.base
 
 /--- ftd.text: (Preview)
 role: $fine-print-bold
-color: $fpm.color.main.cta-primary.base
+color: $fastn.color.main.cta-primary.base
 white-space: nowrap
 
 --- container: switch-container
@@ -716,18 +716,18 @@ overflow-y: auto
 if: $show-modification
 change: MERGE
 
-- While we love `fpm`, it is this `fpm` not the right
+- While we love `fastn`, it is this `fastn` not the right
 - tool for you. We document some of the reasons here. If
 - you come across any other objects, please help us update
 - this page.
 
-+ While we love `fpm`, it is this `fpm` not the right
++ While we love `fastn`, it is this `fastn` not the right
 + tool for you. We document some of the reasons here. If
-+ you come across any other reasons why FPM should not
++ you come across any other reasons why FASTN should not
 + be used, please help us update this page.
-+ While we love `fpm`, it is this `fpm` not the right
++ While we love `fastn`, it is this `fastn` not the right
 + tool for you. We document some of the reasons here. If
-+ you come across any other reasons why FPM should not
++ you come across any other reasons why FASTN should not
 + be used, please help us update this page.
 
 --- container: code-container
@@ -773,9 +773,9 @@ value: $source
 $on-input$: $source=$VALUE
 $on-input$: message-host $edit-obj
 $on-click$: $show-guide = true
-color: $fpm.color.main.text
+color: $fastn.color.main.text
 role: $monospace
-background-color: $fpm.color.main.background.base
+background-color: $fastn.color.main.background.base
 white-space: pre
 
 --- container: edit-input
@@ -789,14 +789,14 @@ if: $show-guide
 if: $show-desktop
 width: fill
 height: fill
-background-color: $fpm.color.main.text-strong
+background-color: $fastn.color.main.text-strong
 
 --- ftd.iframe:
 src: $path
 width: fill
 min-width: percent 100
 min-height: calc 100vh - 52px
-background-color: $fpm.color.main.text-strong
+background-color: $fastn.color.main.text-strong
 
 --- container: code-container
 
@@ -831,20 +831,20 @@ margin-left: 134
 align: center
 
 --- ftd.text: iphone X
-role: $fpm.type.fine-print
-color: $fpm.color.main.cta-primary.base
+role: $fastn.type.fine-print
+color: $fastn.color.main.cta-primary.base
 
 /--- ftd.text: Iphone SE
-role: $fpm.type.fine-print
-color: $fpm.color.main.text
+role: $fastn.type.fine-print
+color: $fastn.color.main.text
 
 /--- ftd.text: Samsung Note
-role: $fpm.type.fine-print
-color: $fpm.color.main.text
+role: $fastn.type.fine-print
+color: $fastn.color.main.text
 
 /--- ftd.text: Samsung Galaxy
-role: $fpm.type.fine-print
-color: $fpm.color.main.text
+role: $fastn.type.fine-print
+color: $fastn.color.main.text
 
 --- container: left-side
 
@@ -854,7 +854,7 @@ height: fill
 padding-top: 16
 padding-bottom: 21
 id: main-sidebar
-background-color: $fpm.color.main.background.step-1
+background-color: $fastn.color.main.background.step-1
 
 --- ftd.column:
 width: fill
@@ -1001,20 +1001,20 @@ id: mobile-frame
 if: $open
 width: percent 90
 anchor: window
-background-color: $fpm.color.main.background.base
+background-color: $fastn.color.main.background.base
 height: fill
 id: right-side
 z-index: 99
 
 --- ftd.row:
 background-color: $grey-dark
-padding-vertical: $fpm.space.space-3
-padding-horizontal: $fpm.space.space-3
+padding-vertical: $fastn.space.space-3
+padding-horizontal: $fastn.space.space-3
 width: fill
 
---- ftd.text: $fpm.package-name
+--- ftd.text: $fastn.package-name
 role: $copy-print-bold
-color: $fpm.color.main.text-strong
+color: $fastn.color.main.text-strong
 width: percent 75
 
 --- ftd.row:
@@ -1033,7 +1033,7 @@ anchor: window
 right: 0
 top: 0
 height: fill
-background-color: $fpm.color.main.background.step-1
+background-color: $fastn.color.main.background.step-1
 width: 53
 padding-top: 20
 padding-left: 20
@@ -1052,9 +1052,9 @@ if: $show-cr-ui
 id: change-request
 width: fill
 background-color: $dark-grey
-color: $fpm.color.main.text-strong
-padding-vertical: $fpm.space.space-3
-padding-left: $fpm.space.space-3
+color: $fastn.color.main.text-strong
+padding-vertical: $fastn.space.space-3
+padding-left: $fastn.space.space-3
 padding-right: 54
 spacing:4
 
@@ -1098,9 +1098,9 @@ id: text-container
 width: fill
 $on-click$: $toc-show= true
 $on-click$: $sitemap-show= false
-background-color if $sitemap-show: $fpm.color.main.background.step-1
+background-color if $sitemap-show: $fastn.color.main.background.step-1
 border-bottom if $sitemap-show: 1
-border-color if $sitemap-show: $fpm.color.main.border-strong
+border-color if $sitemap-show: $fastn.color.main.border-strong
 padding-vertical: 8
 padding-horizontal: 16
 
@@ -1116,9 +1116,9 @@ align: center
 width: fill
 $on-click$: $toc-show= false
 $on-click$: $sitemap-show= true
-background-color if $toc-show: $fpm.color.main.background.step-1
+background-color if $toc-show: $fastn.color.main.background.step-1
 border-bottom if $toc-show: 1
-border-color if $toc-show: $fpm.color.main.border-strong
+border-color if $toc-show: $fastn.color.main.border-strong
 padding-vertical: 8
 padding-horizontal: 16
 
@@ -1151,7 +1151,7 @@ width if $open: percent 100
 width if not $open: percent 100
 width: fill
 height: fill
-background-color: $fpm.color.main.background.base
+background-color: $fastn.color.main.background.base
 
 --- ftd.column:
 width: fill
@@ -1178,11 +1178,11 @@ spacing: 8
 
 --- ftd.text: $path
 role: $fine-print-bold
-color: $fpm.color.main.cta-primary.base
+color: $fastn.color.main.cta-primary.base
 
 /--- ftd.text: (Preview)
 role: $fine-print-bold
-color: $fpm.color.main.cta-primary.base
+color: $fastn.color.main.cta-primary.base
 white-space: nowrap
 
 --- container: switch-container
@@ -1206,14 +1206,14 @@ overflow-y: auto
 if: $show-modification
 change: committed
 
-- While we love `fpm`, it is this `fpm` not the right
+- While we love `fastn`, it is this `fastn` not the right
 - tool for you. We document some of the reasons here. If
 - you come across any other objects, please help us update
 - this page.
 
-+ While we love `fpm`, it is this `fpm` not the right
++ While we love `fastn`, it is this `fastn` not the right
 + tool for you. We document some of the reasons here. If
-+ you come across any other reasons why FPM should not
++ you come across any other reasons why FASTN should not
 + be used, please help us update this page.
 
 --- container: code-container
@@ -1251,8 +1251,8 @@ placeholder: -- ftd.text: hello world
 value: $source
 $on-input$: $source=$VALUE
 $on-input$: message-host $edit-obj
-color: $fpm.color.main.text
-background-color: $fpm.color.main.background.base
+color: $fastn.color.main.text
+background-color: $fastn.color.main.background.base
 white-space: pre
 
 --- container: code-container
@@ -1261,14 +1261,14 @@ white-space: pre
 if: $show-desktop
 width: fill
 height: fill
-background-color: $fpm.color.main.text-strong
+background-color: $fastn.color.main.text-strong
 
 --- ftd.iframe:
 src: $path
 width: fill
 min-width: percent 100
 min-height: calc 100vh - 82px
-background-color: $fpm.color.main.text-strong
+background-color: $fastn.color.main.text-strong
 
 --- container: code-container
 
@@ -1292,33 +1292,33 @@ margin-left: 134
 align: center
 
 --- ftd.text: iphone X
-role: $fpm.type.fine-print
-color: $fpm.color.main.cta-primary.base
+role: $fastn.type.fine-print
+color: $fastn.color.main.cta-primary.base
 
 /--- ftd.text: Iphone SE
-role: $fpm.type.fine-print
-color: $fpm.color.main.text
+role: $fastn.type.fine-print
+color: $fastn.color.main.text
 
 /--- ftd.text: Samsung Note
-role: $fpm.type.fine-print
-color: $fpm.color.main.text
+role: $fastn.type.fine-print
+color: $fastn.color.main.text
 
 /--- ftd.text: Samsung Galaxy
-role: $fpm.type.fine-print
-color: $fpm.color.main.text
+role: $fastn.type.fine-print
+color: $fastn.color.main.text
 
 --- container: left-side
 
 --- ftd.column:
 if: not $edits
 anchor: window
-background-color: $fpm.color.main.background.step-1
+background-color: $fastn.color.main.background.step-1
 right: 0
 bottom: 0
 width: 46
 height: fill
 id: image-one
-padding-top: $fpm.space.space-3
+padding-top: $fastn.space.space-3
 padding-bottom: 21
 spacing: 32
 
@@ -1417,7 +1417,7 @@ height: fill
 padding-top: 16
 padding-bottom: 21
 id: main-sidebar
-background-color: $fpm.color.main.background.step-1
+background-color: $fastn.color.main.background.step-1
 margin-left: 16
 
 --- ftd.column:
@@ -1535,8 +1535,8 @@ spacing: 10
 padding: 10
 position: center
 border-radius: 8
-color: $fpm.color.main.cta-secondary.text
-background-color: $fpm.color.main.cta-secondary.base
+color: $fastn.color.main.cta-secondary.text
+background-color: $fastn.color.main.cta-secondary.base
 $on-click$: message-host $sync-obj
 
 
@@ -1568,8 +1568,8 @@ spacing: 10
 padding: 10
 position: center
 border-radius: 8
-color: $fpm.color.main.cta-tertiary.text
-background-color: $fpm.color.main.cta-tertiary.base
+color: $fastn.color.main.cta-tertiary.text
+background-color: $fastn.color.main.cta-tertiary.base
 $on-click$: message-host $view-obj
 
 
@@ -1611,8 +1611,8 @@ border-radius: 8
 
 --- ftd.text: Create
 $on-click$: message-host $create-obj
-color: $fpm.color.main.cta-primary.text
-background-color: $fpm.color.main.cta-primary.base
+color: $fastn.color.main.cta-primary.text
+background-color: $fastn.color.main.cta-primary.base
 padding: 10
 align: center
 border-radius: 8
@@ -1669,9 +1669,9 @@ data: $new-name
 
 
 -- ftd.column print-toc:
-fpm.toc-item list toc:
+fastn.toc-item list toc:
 width: fill
-margin-top if $is-mobile: $fpm.space.space-2
+margin-top if $is-mobile: $fastn.space.space-2
 
 --- print-toc-item:
 $loop$: $toc as $obj
@@ -1695,13 +1695,13 @@ left: 370
 left if $is-mobile: 12
 top: 84
 z-index: 99999
-background-color: $fpm.color.main.background.step-2
+background-color: $fastn.color.main.background.step-2
 border-radius: 4
 id: newfile-row
 
 --- ftd.row:
 width: fill
-background-color: $fpm.color.main.background.step-2
+background-color: $fastn.color.main.background.step-2
 padding-left: 10
 padding-right: 5
 padding-vertical: 3
@@ -1709,23 +1709,23 @@ border-radius: 4
 
 --- ftd.text: New folder
 role: $tiny
-color: $fpm.color.main.cta-primary.base
-margin-right: $fpm.space.space-2
+color: $fastn.color.main.cta-primary.base
+margin-right: $fastn.space.space-2
 align: center
 white-space: nowrap
 
 --- ftd.row:
 width: fill
-background-color: $fpm.color.main.background.step-1
+background-color: $fastn.color.main.background.step-1
 
 --- ftd.input:
 width: fill
 placeholder: folder name
 $on-input$: $create-file-path=$VALUE
 padding-horizontal: 10
-padding-vertical: $fpm.space.space-2
-background-color: $fpm.color.main.background.step-1
-color: $fpm.color.main.text-strong
+padding-vertical: $fastn.space.space-2
+background-color: $fastn.color.main.background.step-1
+color: $fastn.color.main.text-strong
 border-width: 0
 cursor: text
 
@@ -1742,7 +1742,7 @@ top: -12
 z-index: 9999
 width: 16
 height: 16
-background-color: $fpm.color.main.background.step-2
+background-color: $fastn.color.main.background.step-2
 border-width: 1
 border-color: $grey-dark
 padding: 3
@@ -1793,13 +1793,13 @@ left: 370
 left if $is-mobile: 12
 top: 84
 z-index: 10000
-background-color: $fpm.color.main.background.step-2
+background-color: $fastn.color.main.background.step-2
 border-radius: 4
 id: newfile-row
 
 --- ftd.row:
 width: fill
-background-color: $fpm.color.main.background.step-2
+background-color: $fastn.color.main.background.step-2
 padding-left: 10
 padding-right: 5
 padding-vertical: 3
@@ -1807,23 +1807,23 @@ border-radius: 4
 
 --- ftd.text: New file
 role: $tiny
-color: $fpm.color.main.cta-primary.base
-margin-right: $fpm.space.space-2
+color: $fastn.color.main.cta-primary.base
+margin-right: $fastn.space.space-2
 align: center
 white-space: nowrap
 
 --- ftd.row:
 width: fill
-background-color: $fpm.color.main.background.step-1
+background-color: $fastn.color.main.background.step-1
 
 --- ftd.input:
 width: fill
 placeholder: filename.ftd
 $on-input$: $create-file-path=$VALUE
 padding-horizontal: 10
-padding-vertical: $fpm.space.space-2
-background-color: $fpm.color.main.background.step-1
-color: $fpm.color.main.text-strong
+padding-vertical: $fastn.space.space-2
+background-color: $fastn.color.main.background.step-1
+color: $fastn.color.main.text-strong
 border-width: 0
 cursor: text
 
@@ -1840,7 +1840,7 @@ top: -12
 z-index: 9999
 width: 16
 height: 16
-background-color: $fpm.color.main.background.step-2
+background-color: $fastn.color.main.background.step-2
 border-width: 1
 border-color: $grey-dark
 padding: 3
@@ -1865,7 +1865,7 @@ $on-click$: $show-overlay = false
 
 
 -- ftd.column print-toc-item:
-fpm.toc-item toc:
+fastn.toc-item toc:
 boolean is-first: false
 boolean show-actions: false
 boolean show: false
@@ -1952,14 +1952,14 @@ $on-click$: $show-delete-dialog = true
 $on-click$: $show-overlay = true
 $on-click$: $dialog-open = true
 id: rename-area
-margin-right: $fpm.space.space-2
+margin-right: $fastn.space.space-2
 
 --- container: file-hover
 
 --- ftd.row:
 width: fill
 id: switch-container
-padding-left: $fpm.space.space-3
+padding-left: $fastn.space.space-3
 
 --- ftd.row:
 if: $show-children
@@ -1974,7 +1974,7 @@ if: $toc.children is not empty
 src: $downarrow
 $on-click$ if not $show-children:$show-children = false
 align: center
-padding-right: $fpm.space.space-1
+padding-right: $fastn.space.space-1
 
 --- container: switch-container
 
@@ -1991,7 +1991,7 @@ if: $toc.children is not empty
 src: $right-arrow
 $on-click$ if not $show-children:$show-children = false
 align: center
-padding-right: $fpm.space.space-1
+padding-right: $fastn.space.space-1
 
 --- container: switch-container
 
@@ -2001,7 +2001,7 @@ src: $file
 width: 15
 height: auto
 align: center
-padding-right: $fpm.space.space-1
+padding-right: $fastn.space.space-1
 
 --- container: switch-container
 
@@ -2017,8 +2017,8 @@ status: $toc.number
 --- ftd.column:
 if: $show-children
 width: fill
-padding-left if not $is-first: $fpm.space.space-3
-padding-left if $is-first: $fpm.space.space-3
+padding-left if not $is-first: $fastn.space.space-3
+padding-left if $is-first: $fastn.space.space-3
 
 --- print-toc-item:
 $loop$: $toc.children as $obj
@@ -2058,13 +2058,13 @@ left: 370
 left if $is-mobile: 12
 top: 84
 z-index: 10000
-background-color: $fpm.color.main.background.step-2
+background-color: $fastn.color.main.background.step-2
 border-radius: 4
 id: rename-row
 
 --- ftd.row:
 width: fill
-background-color: $fpm.color.main.background.step-2
+background-color: $fastn.color.main.background.step-2
 padding-left: 10
 padding-right: 5
 padding-vertical: 3
@@ -2072,13 +2072,13 @@ border-radius: 4
 
 --- ftd.text: Rename
 role: $tiny
-color: $fpm.color.main.cta-primary.base
-margin-right: $fpm.space.space-2
+color: $fastn.color.main.cta-primary.base
+margin-right: $fastn.space.space-2
 align: center
 
 --- ftd.row:
 width: fill
-background-color: $fpm.color.main.background.step-1
+background-color: $fastn.color.main.background.step-1
 
 --- ftd.input:
 width: fill
@@ -2087,9 +2087,9 @@ placeholder: $rename-title
 $on-input$: $new-name=$VALUE
 $on-input$: $rename-file-path=$rename-path
 padding-horizontal: 10
-padding-vertical: $fpm.space.space-2
-background-color: $fpm.color.main.background.step-1
-color: $fpm.color.main.text-strong
+padding-vertical: $fastn.space.space-2
+background-color: $fastn.color.main.background.step-1
+color: $fastn.color.main.text-strong
 border-width: 0
 cursor: text
 
@@ -2106,7 +2106,7 @@ top: -12
 z-index: 9999
 width: 16
 height: 16
-background-color: $fpm.color.main.background.step-2
+background-color: $fastn.color.main.background.step-2
 border-width: 1
 border-color: $grey-dark
 padding: 3
@@ -2146,13 +2146,13 @@ $on-mouse-enter$: $show-revert = false
 --- ftd.text: $title
 if: $link is not null
 link: $link
-color: $fpm.color.main.text-strong
+color: $fastn.color.main.text-strong
 role: $monospace
 width: fill
 
 --- ftd.text: $title
 if: $link is null
-color: $fpm.color.main.text-strong
+color: $fastn.color.main.text-strong
 role: $monospace
 width: fill
 
@@ -2174,14 +2174,14 @@ $on-mouse-enter$: $show-revert = false
 --- ftd.text: $title
 if: $link is not null
 link: $link
-color: $fpm.color.main.text-strong
+color: $fastn.color.main.text-strong
 role: $monospace
 white-space: nowrap
 width: fill
 
 --- ftd.text: $title
 if: $link is null
-color: $fpm.color.main.text-strong
+color: $fastn.color.main.text-strong
 role: $monospace
 width: fill
 
@@ -2204,13 +2204,13 @@ color: $merge
 if: $link is not null
 link: $link
 width: fill
-color: $fpm.color.main.text-strong
+color: $fastn.color.main.text-strong
 role: $monospace
 
 --- ftd.text: $title
 if: $link is null
 width: fill
-color: $fpm.color.main.text-strong
+color: $fastn.color.main.text-strong
 role: $monospace
 
 --- ftd.text: M
@@ -2232,13 +2232,13 @@ $on-mouse-enter$: $show-action-on-status = false
 if: $link is not null
 link: $link
 width: fill
-color: $fpm.color.main.text-strong
+color: $fastn.color.main.text-strong
 role: $monospace
 
 --- ftd.text: $title
 if: $link is null
 width: fill
-color: $fpm.color.main.text-strong
+color: $fastn.color.main.text-strong
 role: $monospace
 
 --- ftd.text: D
@@ -2260,13 +2260,13 @@ $on-mouse-enter$: $show-action-on-status = true
 if: $link is not null
 link: $link
 width: fill
-color: $fpm.color.main.text-strong
+color: $fastn.color.main.text-strong
 role: $monospace
 
 --- ftd.text: $title
 if: $link is null
 width: fill
-color: $fpm.color.main.text-strong
+color: $fastn.color.main.text-strong
 role: $monospace
 
 --- ftd.text: C
@@ -2288,13 +2288,13 @@ $on-mouse-enter$: $show-action-on-status = true
 if: $link is not null
 link: $link
 width: fill
-color: $fpm.color.main.text-strong
+color: $fastn.color.main.text-strong
 role: $monospace
 
 --- ftd.text: $title
 if: $link is null
 width: fill
-color: $fpm.color.main.text-strong
+color: $fastn.color.main.text-strong
 role: $monospace
 
 --- ftd.text: O
@@ -2316,13 +2316,13 @@ $on-mouse-enter$: $show-action-on-status = true
 if: $link is not null
 link: $link
 width: fill
-color: $fpm.color.main.text-strong
+color: $fastn.color.main.text-strong
 role: $monospace
 
 --- ftd.text: $title
 if: $link is null
 width: fill
-color: $fpm.color.main.text-strong
+color: $fastn.color.main.text-strong
 role: $monospace
 
 --- ftd.text: Cˆ
@@ -2344,13 +2344,13 @@ $on-mouse-enter$: $show-action-on-status = true
 if: $link is not null
 link: $link
 width: fill
-color: $fpm.color.main.text-strong
+color: $fastn.color.main.text-strong
 role: $monospace
 
 --- ftd.text: $title
 if: $link is null
 width: fill
-color: $fpm.color.main.text-strong
+color: $fastn.color.main.text-strong
 role: $monospace
 
 --- ftd.text: C˘
@@ -2371,13 +2371,13 @@ $on-mouse-enter$: $show-action-on-status = true
 if: $link is not null
 link: $link
 width: fill
-color: $fpm.color.main.text-strong
+color: $fastn.color.main.text-strong
 role: $monospace
 
 --- ftd.text: $title
 width: fill
 if: $link is null
-color: $fpm.color.main.text-strong
+color: $fastn.color.main.text-strong
 role: $monospace
 
 
@@ -2410,7 +2410,7 @@ id: iamoverlay
 
 -- ftd.row guide-80chars:
 border-right: 1
-border-color: $fpm.color.main.border
+border-color: $fastn.color.main.border
 height: calc 100vh - 52px
 anchor: parent
 top: 0
@@ -2438,8 +2438,8 @@ height: 365
 max-width: 500
 align: center
 background-color: $delete-dialog-bg
-padding-horizontal: $fpm.space.space-4
-padding-vertical: $fpm.space.space-4
+padding-horizontal: $fastn.space.space-4
+padding-vertical: $fastn.space.space-4
 border-radius: 8
 anchor: window
 top: 100
@@ -2454,12 +2454,12 @@ id: title-container
 --- ftd.text: $title
 role: $dialog-title
 color: $orange
-margin-bottom: $fpm.space.space-1
+margin-bottom: $fastn.space.space-1
 
 --- ftd.text: $subtitle
-role: $fpm.type.fine-print
-color: $fpm.color.main.text-strong
-margin-bottom: $fpm.space.space-2
+role: $fastn.type.fine-print
+color: $fastn.color.main.text-strong
+margin-bottom: $fastn.space.space-2
 
 --- container: title-container
 
@@ -2477,7 +2477,7 @@ value: $source
 $on-input$: $source=$VALUE
 $on-input$: message-host $edit-obj
 background-color: $code-bg
-color: $fpm.color.main.text
+color: $fastn.color.main.text
 white-space: pre
 
 --- container: code-container
@@ -2492,7 +2492,7 @@ spacing: 24
 
 --- ftd.text: $close
 role: $dialog-title
-color: $fpm.color.main.text
+color: $fastn.color.main.text
 $on-click$: $show-delete-dialog = false
 $on-click$: $show-overlay = false
 $on-click$: $dialog-open = false
@@ -2515,9 +2515,9 @@ $on-click$: message-host $delete-obj
 
 
 -- ftd.column print-sitemap-toc:
-fpm.toc-item list sample-list:
+fastn.toc-item list sample-list:
 width: fill
-margin-top if $is-mobile: $fpm.space.space-2
+margin-top if $is-mobile: $fastn.space.space-2
 
 --- print-sitemap-toc-item:
 $loop$: $sample-list as $obj
@@ -2537,7 +2537,7 @@ url: $obj.url
 -- ftd.column print-sitemap-toc-item:
 caption title:
 optional string url:
-fpm.toc-item list children:
+fastn.toc-item list children:
 boolean show-actions: false
 boolean show-tooltip: false
 boolean show: false
@@ -2562,7 +2562,7 @@ margin-bottom: 1
 --- ftd.row:
 width: fill
 id: switch-container
-padding-left: $fpm.space.space-3
+padding-left: $fastn.space.space-3
 
 --- ftd.row:
 if: $show-children
@@ -2574,7 +2574,7 @@ if: $children is not empty
 src: $downarrow
 $on-click$ if not $show-children:$show-children = false
 align: center
-padding-right: $fpm.space.space-1
+padding-right: $fastn.space.space-1
 
 --- container: switch-container
 
@@ -2588,7 +2588,7 @@ if: $children is not empty
 src: $right-arrow
 $on-click$ if not $show-children:$show-children = false
 align: center
-padding-right: $fpm.space.space-1
+padding-right: $fastn.space.space-1
 
 --- container: switch-container
 
@@ -2598,7 +2598,7 @@ src: $file
 width: 15
 height: auto
 align: center
-padding-right: $fpm.space.space-1
+padding-right: $fastn.space.space-1
 
 --- container: switch-container
 
@@ -2615,7 +2615,7 @@ link: $url
 --- ftd.column:
 if: $show-children
 width: fill
-padding-left: $fpm.space.space-3
+padding-left: $fastn.space.space-3
 
 --- print-sitemap-toc-item:
 $loop$: $children as $obj
@@ -2650,13 +2650,13 @@ spacing: 8
 
 --- ftd.text: $title
 if: $link is not null
-color: $fpm.color.main.text-strong
+color: $fastn.color.main.text-strong
 role: $monospace
 white-space: nowrap
 
 --- ftd.text: $title
 if: $link is null
-color: $fpm.color.main.text-strong
+color: $fastn.color.main.text-strong
 role: $monospace
 white-space: nowrap
 
@@ -2664,11 +2664,11 @@ white-space: nowrap
 
 --- ftd.column:
 id: sample-container
-padding-vertical: $fpm.space.space-1
-padding-horizontal: $fpm.space.space-1
+padding-vertical: $fastn.space.space-1
+padding-horizontal: $fastn.space.space-1
 border-radius: 100
 margin-top: 4
-background-color: $fpm.color.main.text
+background-color: $fastn.color.main.text
 $on-mouse-enter$: $show-tooltip = true
 $on-mouse-leave$: $show-tooltip = false
 
@@ -2748,17 +2748,17 @@ width:fill
 
 --- ftd.text: Key
 role: $small-font
-color: $fpm.color.main.text-strong
+color: $fastn.color.main.text-strong
 
 --- ftd.text: :
 role: $small-font
-color: $fpm.color.main.text-strong
+color: $fastn.color.main.text-strong
 
 --- container: text-container
 
 --- ftd.text: value
 role: $small-font
-color: $fpm.color.main.text-strong
+color: $fastn.color.main.text-strong
 width: fill
 
 --- container:  key-container
@@ -2775,17 +2775,17 @@ width:fill
 
 --- ftd.text: Key
 role: $small-font
-color: $fpm.color.main.text-strong
+color: $fastn.color.main.text-strong
 
 --- ftd.text: :
 role: $small-font
-color: $fpm.color.main.text-strong
+color: $fastn.color.main.text-strong
 
 --- container: text-container
 
 --- ftd.text: value
 role: $small-font
-color: $fpm.color.main.text-strong
+color: $fastn.color.main.text-strong
 width: fill
 
 
@@ -2797,11 +2797,11 @@ width: fill
 
 
 -- ftd.column print-cr-toc:
-fpm.toc-item list sample-list:
+fastn.toc-item list sample-list:
 width: fill
 boolean open: true
 max-height: 220
-margin-top if $is-mobile: $fpm.space.space-2
+margin-top if $is-mobile: $fastn.space.space-2
 
 --- ftd.row:
 width: fill
@@ -2864,7 +2864,7 @@ width: 20
 if: $open
 width: fill
 overflow-y: auto
-margin-top: $fpm.space.space-2
+margin-top: $fastn.space.space-2
 
 --- print-cr-toc-item:
 $loop$: $sample-list as $obj
@@ -2884,7 +2884,7 @@ url: $obj.url
 -- ftd.column print-cr-toc-item:
 caption title:
 optional string url:
-fpm.toc-item list children:
+fastn.toc-item list children:
 boolean show-actions: false
 boolean show-tooltip: false
 boolean show: false
@@ -2909,7 +2909,7 @@ margin-bottom: 1
 --- ftd.row:
 width: fill
 id: switch-container
-padding-left: $fpm.space.space-3
+padding-left: $fastn.space.space-3
 
 --- ftd.row:
 if: $show-children
@@ -2922,7 +2922,7 @@ if: $children is not empty
 src: $downarrow
 $on-click$ if not $show-children:$show-children = false
 align: center
-padding-right: $fpm.space.space-1
+padding-right: $fastn.space.space-1
 width: 12
 
 --- container: switch-container
@@ -2938,7 +2938,7 @@ if: $children is not empty
 src: $right-arrow
 $on-click$ if not $show-children:$show-children = false
 align: center
-padding-right: $fpm.space.space-1
+padding-right: $fastn.space.space-1
 
 --- container: switch-container
 
@@ -2953,7 +2953,7 @@ link: $url
 --- ftd.column:
 if: $show-children
 width: fill
-padding-left: $fpm.space.space-3
+padding-left: $fastn.space.space-3
 
 --- print-cr-toc-item:
 $loop$: $children as $obj
@@ -2984,13 +2984,13 @@ spacing: 8
 
 --- ftd.text: $title
 if: $link is not null
-color: $fpm.color.main.text-strong
+color: $fastn.color.main.text-strong
 role: $monospace
 white-space: nowrap
 
 --- ftd.text: $title
 if: $link is null
-color: $fpm.color.main.text-strong
+color: $fastn.color.main.text-strong
 role: $monospace
 white-space: nowrap
 
@@ -3016,7 +3016,7 @@ string cr-title:
 optional string url:
 width: fill
 spacing: 4
-margin-left: $fpm.space.space-1
+margin-left: $fastn.space.space-1
 
 --- ftd.text: $cr-number
 if: $url is null
@@ -3061,13 +3061,13 @@ border-color : $red-text
  
 --- ftd.text: $title
 width: fill
-role: $fpm.type.copy-tight
+role: $fastn.type.copy-tight
 color: $red-text
 
 --- ftd.text: 
 text: $body
 width: fill
-role: $fpm.type.copy-tight
+role: $fastn.type.copy-tight
 color: $red-text
 
 
@@ -3097,7 +3097,7 @@ color: $sky-blue
 lang: diff
 text: $body
 width: fill
-role: $fpm.type.copy-tight
+role: $fastn.type.copy-tight
 border-left: 4
 padding-vertical: 24
 padding-horizontal: 24

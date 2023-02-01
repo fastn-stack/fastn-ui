@@ -1,34 +1,34 @@
--- import: fpm
--- import: fpm-lib
+-- import: fastn
+-- import: fastn-lib
 
 
 -- ftd.column package-info-page:
 width: fill
 padding: 40
 
---- fpm-lib.h0: $fpm.i18n.welcome-fpm-page
+--- fastn-lib.h0: $fastn.i18n.welcome-fastn-page
 
-$fpm.i18n.welcome-fpm-page-subtitle
+$fastn.i18n.welcome-fastn-page-subtitle
 
---- ftd.text: $fpm.package-name
+--- ftd.text: $fastn.package-name
 
---- fpm-lib.key-value-without-default: Built with `fpm-cli` version
-value: $fpm.info.cli-version
+--- fastn-lib.key-value-without-default: Built with `fastn-cli` version
+value: $fastn.info.cli-version
 
---- fpm-lib.key-value-without-default: Git hash for `fpm-cli` build
-value: $fpm.info.cli-git-commit-hash
+--- fastn-lib.key-value-without-default: Git hash for `fastn-cli` build
+value: $fastn.info.cli-git-commit-hash
 
---- fpm-lib.key-value-without-default: `fpm-cli` build timestamp
-value: $fpm.info.cli-created-on
+--- fastn-lib.key-value-without-default: `fastn-cli` build timestamp
+value: $fastn.info.cli-created-on
 
---- fpm-lib.key-value-without-default: $fpm.i18n.language
-value: $fpm.language
+--- fastn-lib.key-value-without-default: $fastn.i18n.language
+value: $fastn.language
 
---- fpm-lib.key-value-without-default: Zip:
-value: $fpm.package-zip
+--- fastn-lib.key-value-without-default: Zip:
+value: $fastn.package-zip
 
---- fpm-lib.key-value-without-default: Build timestamp
-value: $fpm.info.build-created-on
+--- fastn-lib.key-value-without-default: Build timestamp
+value: $fastn.info.build-created-on
 
---- fpm-lib.key-value-without-default: FTD version
-value: $fpm.info.ftd-version
+--- fastn-lib.key-value-without-default: FTD version
+value: $fastn.info.ftd-version
