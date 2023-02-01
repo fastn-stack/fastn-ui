@@ -1,5 +1,5 @@
--- import: fpm
--- import: fpm-lib
+-- import: fastn
+-- import: fastn-lib
 
 
 -- ftd.column translation-status-page:
@@ -7,17 +7,17 @@ padding-vertical: 40
 padding-horizontal: 20
 width: fill
 
---- h0: $fpm.i18n.language-detail-page
+--- h0: $fastn.i18n.language-detail-page
 
---- title: $fpm.package-title
-subtitle: key-value: $fpm.i18n.last-modified-on
-> value: $fpm.last-modified-on
+--- title: $fastn.package-title
+subtitle: key-value: $fastn.i18n.last-modified-on
+> value: $fastn.last-modified-on
 > default: Never synced
 
-$fpm.i18n.language-detail-page-body
+$fastn.i18n.language-detail-page-body
 
---- key-value: $fpm.i18n.total-number-of-documents
-value: $fpm.number-of-documents
+--- key-value: $fastn.i18n.total-number-of-documents
+value: $fastn.number-of-documents
 default: Not known
 
 --- files-status:
@@ -57,18 +57,18 @@ width: fill
 
 --- ftd.text: $title
 region: title
-color: $fpm.color.main.text
+color: $fastn.color.main.text
 style: bold
 align: center
-link: $fpm.home-url
+link: $fastn.home-url
 
---- ftd.text: $fpm.language
-if: $fpm.language is not null
+--- ftd.text: $fastn.language
+if: $fastn.language is not null
 border-radius: 10
-background-color: $fpm.color.main.background.base
+background-color: $fastn.color.main.background.base
 padding-vertical: 5
 padding-horizontal: 20
-color: $fpm.color.main.text
+color: $fastn.color.main.text
 align: center
 
 --- container: ftd.main
@@ -90,7 +90,7 @@ region: h0
 --- ftd.text:
 text: $title
 region: title
-color: $fpm.color.main.text
+color: $fastn.color.main.text
 style: bold
 padding-bottom: 24
 
@@ -105,7 +105,7 @@ body: $body
 -- ftd.text markdown:
 body body:
 text: $body
-color: $fpm.color.main.text
+color: $fastn.color.main.text
 padding-bottom: 34
 padding-top: 50
 
@@ -116,7 +116,7 @@ caption file:
 ftd.ui status:
 width: fill
 border-bottom: 1
-border-color: $fpm.color.main.cta-primary.base
+border-color: $fastn.color.main.cta-primary.base
 padding: 10
 
 --- ftd.text: $file
@@ -128,57 +128,57 @@ padding: 5
 
 
 -- ftd.column files-status:
-background-color: $fpm.color.main.background.base
+background-color: $fastn.color.main.background.base
 width: fill
 max-width: 800
 
 --- ftd.row:
 width: fill
-background-color: $fpm.color.main.background.base
-color: $fpm.color.main.text
+background-color: $fastn.color.main.background.base
+color: $fastn.color.main.text
 padding: 10
 border-top-radius: 5
 
---- ftd.text: $fpm.i18n.document
+--- ftd.text: $fastn.i18n.document
 width: percent 50
 padding: 5
 
---- ftd.text: $fpm.i18n.status
+--- ftd.text: $fastn.i18n.status
 width: percent 50
 padding: 5
 
 --- container: ftd.main
 
 --- print: $obj
-$loop$: $fpm.missing-files as $obj
-status: ftd.text: $fpm.i18n.missing
+$loop$: $fastn.missing-files as $obj
+status: ftd.text: $fastn.i18n.missing
 > padding: 5
-> color: $fpm.color.main.text
-> background-color: $fpm.color.main.background.base
+> color: $fastn.color.main.text
+> background-color: $fastn.color.main.background.base
 > border-radius: 10
 
 --- print: $obj
-$loop$: $fpm.never-marked-files as $obj
-status: ftd.text: $fpm.i18n.never-marked
+$loop$: $fastn.never-marked-files as $obj
+status: ftd.text: $fastn.i18n.never-marked
 > padding: 5
-> color: $fpm.color.main.text
-> background-color: $fpm.color.main.background.base
-> border-radius: 10
-
-
---- print: $obj
-$loop$: $fpm.outdated-files as $obj
-status: ftd.text: $fpm.i18n.out-dated
-> padding: 5
-> color: $fpm.color.main.text
-> background-color: $fpm.color.main.background.base
+> color: $fastn.color.main.text
+> background-color: $fastn.color.main.background.base
 > border-radius: 10
 
 
 --- print: $obj
-$loop$: $fpm.upto-date-files as $obj
-status: ftd.text: $fpm.i18n.upto-date
+$loop$: $fastn.outdated-files as $obj
+status: ftd.text: $fastn.i18n.out-dated
 > padding: 5
-> color: $fpm.color.main.text
-> background-color: $fpm.color.main.background.base
+> color: $fastn.color.main.text
+> background-color: $fastn.color.main.background.base
+> border-radius: 10
+
+
+--- print: $obj
+$loop$: $fastn.upto-date-files as $obj
+status: ftd.text: $fastn.i18n.upto-date
+> padding: 5
+> color: $fastn.color.main.text
+> background-color: $fastn.color.main.background.base
 > border-radius: 10

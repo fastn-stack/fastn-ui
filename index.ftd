@@ -1,5 +1,5 @@
--- import: fpm
--- import: fpm-lib
+-- import: fastn
+-- import: fastn-lib
 
 
 
@@ -16,17 +16,17 @@
 width: fill
 padding: 40
 
---- fpm-lib.h0: $fpm.i18n.welcome-fpm-page
+--- fastn-lib.h0: $fastn.i18n.welcome-fastn-page
 
-$fpm.i18n.welcome-fpm-page-subtitle
+$fastn.i18n.welcome-fastn-page-subtitle
 
---- ftd.text: $fpm.package-name
+--- ftd.text: $fastn.package-name
 
---- fpm-lib.key-value-without-default: $fpm.i18n.language
-value: $fpm.language
+--- fastn-lib.key-value-without-default: $fastn.i18n.language
+value: $fastn.language
 
---- fpm-lib.key-value-without-default: Zip:
-value: $fpm.package-zip
+--- fastn-lib.key-value-without-default: Zip:
+value: $fastn.package-zip
 
 
 
@@ -43,21 +43,21 @@ padding-vertical: 40
 padding-horizontal: 20
 width: fill
 
---- h0: $fpm.i18n.language-detail-page
+--- h0: $fastn.i18n.language-detail-page
 
---- title: $fpm.package-title
-subtitle: key-value: $fpm.i18n.last-modified-on
-> value: $fpm.last-modified-on
+--- title: $fastn.package-title
+subtitle: key-value: $fastn.i18n.last-modified-on
+> value: $fastn.last-modified-on
 > default: Never synced
 
-$fpm.i18n.language-detail-page-body
+$fastn.i18n.language-detail-page-body
 
---- key-value: $fpm.i18n.total-number-of-documents
-value: $fpm.number-of-documents
+--- key-value: $fastn.i18n.total-number-of-documents
+value: $fastn.number-of-documents
 default: Not known
 
 --- files-status:
-ftd.color-scheme colors: $fpm.design.colors.brand
+ftd.color-scheme colors: $fastn.design.colors.brand
 colors: $colors
 
 
@@ -116,10 +116,10 @@ region: title
 ftd.color-scheme colors:
 color: $colors.cta-secondary.base
 align: center
-link: $fpm.home-url
+link: $fastn.home-url
 
---- ftd.text: $fpm.language
-if: $fpm.language is not null
+--- ftd.text: $fastn.language
+if: $fastn.language is not null
 border-radius: 10
 ftd.color-scheme colors:
 color: $colors.cta-secondary.base
@@ -134,7 +134,7 @@ align: center
 
 --- markdown:
 if: $body is not null
-ftd.color-scheme colors: $fpm.design.colors.brand
+ftd.color-scheme colors: $fastn.design.colors.brand
 colors: $colors
 body: $body
 
@@ -167,7 +167,7 @@ padding-bottom: 24
 
 --- markdown:
 if: $body is not null
-ftd.color-scheme colors: $fpm.design.colors.brand
+ftd.color-scheme colors: $fastn.design.colors.brand
 colors: $colors
 body: $body
 
@@ -240,20 +240,20 @@ color: $colors.cta-primary.text
 padding: 10
 border-top-radius: 5
 
---- ftd.text: $fpm.i18n.document
+--- ftd.text: $fastn.i18n.document
 width: percent 50
 padding: 5
 
---- ftd.text: $fpm.i18n.status
+--- ftd.text: $fastn.i18n.status
 width: percent 50
 padding: 5
 
 --- container: ftd.main
 
 --- print: $obj
-$loop$: $fpm.missing-files as $obj
-status: ftd.text: $fpm.i18n.missing
-ftd.color-scheme colors: $fpm.design.colors.brand
+$loop$: $fastn.missing-files as $obj
+status: ftd.text: $fastn.i18n.missing
+ftd.color-scheme colors: $fastn.design.colors.brand
 colors: $colors
 > padding: 5
 > color: $colors.cta-primary.base
@@ -261,9 +261,9 @@ colors: $colors
 > border-radius: 10
 
 --- print: $obj
-$loop$: $fpm.never-marked-files as $obj
-status: ftd.text: $fpm.i18n.never-marked
-ftd.color-scheme colors: $fpm.design.colors.brand
+$loop$: $fastn.never-marked-files as $obj
+status: ftd.text: $fastn.i18n.never-marked
+ftd.color-scheme colors: $fastn.design.colors.brand
 colors: $colors
 > padding: 5
 > color: #4e4ead
@@ -271,9 +271,9 @@ colors: $colors
 > border-radius: 10
 
 --- print: $obj
-$loop$: $fpm.outdated-files as $obj
-status: ftd.text: $fpm.i18n.out-dated
-ftd.color-scheme colors: $fpm.design.colors.brand
+$loop$: $fastn.outdated-files as $obj
+status: ftd.text: $fastn.i18n.out-dated
+ftd.color-scheme colors: $fastn.design.colors.brand
 colors: $colors
 > padding: 5
 > color: #f7d06d
@@ -281,9 +281,9 @@ colors: $colors
 > border-radius: 10
 
 --- print: $obj
-$loop$: $fpm.upto-date-files as $obj
-status: ftd.text: $fpm.i18n.upto-date
-ftd.color-scheme colors: $fpm.design.colors.brand
+$loop$: $fastn.upto-date-files as $obj
+status: ftd.text: $fastn.i18n.upto-date
+ftd.color-scheme colors: $fastn.design.colors.brand
 colors: $colors
 > padding: 5
 > color: #4da486
