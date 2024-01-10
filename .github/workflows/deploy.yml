@@ -20,7 +20,7 @@ jobs:
       - name: Install fastn
         id: install_fastn
         continue-on-error: false
-        run: sh -c "$(curl -fsSL https://raw.githubusercontent.com/fastn-stack/fastn/main/install.sh)"
+        run: sh -c "$(curl -fsSL https://fastn.com/install.sh)"
       - name: Get latest commit information
         id: get_commit
         run: echo "::set-output name=commit_sha::$(git rev-parse HEAD)"
