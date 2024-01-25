@@ -2,8 +2,8 @@
   "files": {
     "FASTN.ftd": {
       "name": "FASTN.ftd",
-      "checksum": "1066A9EFBCD55602BA348B7FA1D1FF0825A84FA8853EA6E3B26E9E0C5F4C1FB6",
-      "size": 201
+      "checksum": "F0AC3A3239BF7A404C154404FE9E032FBFAB877BAFA18CF59E1B71E2B7C8A30F",
+      "size": 131
     },
     "arrow-right.png": {
       "name": "arrow-right.png",
@@ -206,6 +206,6 @@
       "size": 3168
     }
   },
-  "zip_url": "https://codeload.github.com/fastn-stack/fastn-ui/zip/refs/heads/main",
-  "checksum": "906F7026F82EDA11C1C2FAD7E889B73C82E96EB2EB8A69B01347D368E0F216D2"
+  "zip_url": "https://github.com/fastn-stack/fastn-ui/archive/f362c0b2ad735981e8125fa427c2a95c9d1ca5b3.zip",
+  "checksum": "0A04163D83C8250038455B6EF238F6BD358FCEE019882248462F2BD07B8AC673"
 }
