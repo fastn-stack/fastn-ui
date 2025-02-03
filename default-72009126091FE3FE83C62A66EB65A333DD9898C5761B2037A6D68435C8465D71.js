@@ -116,6 +116,7 @@ const fastn = (function (fastn) {
         #property;
         #formula;
         #inherited;
+
         constructor(func, execute = true) {
             if (execute) {
                 this.#cached_value = func();
@@ -126,9 +127,11 @@ const fastn = (function (fastn) {
         get() {
             return this.#cached_value;
         }
+
         getFormula() {
             return this.#formula;
         }
+
         addNodeProperty(node, property, inherited) {
             this.#node = node;
             this.#property = property;
@@ -137,13 +140,16 @@ const fastn = (function (fastn) {
 
             return this;
         }
+
         update() {
             this.#cached_value = this.#formula();
             this.updateUi();
         }
+
         getNode() {
             return this.#node;
         }
+
         updateUi() {
             if (
                 !this.#node ||
@@ -167,6 +173,7 @@ const fastn = (function (fastn) {
         #old_closure;
         #closures;
         #closureInstance;
+
         constructor(val) {
             this.#value = null;
             this.#old_closure = null;
@@ -176,6 +183,11 @@ const fastn = (function (fastn) {
             );
             this.set(val);
         }
+
+        closures() {
+            return this.#closures;
+        }
+
         get(key) {
             if (
                 !fastn_utils.isNull(key) &&
@@ -187,6 +199,16 @@ const fastn = (function (fastn) {
             }
             return this.#value;
         }
+
+        forLoop(root, dom_constructor) {
+            if ((!this.#value) instanceof MutableList) {
+                throw new Error(
+                    "`forLoop` can only run for MutableList type object",
+                );
+            }
+            this.#value.forLoop(root, dom_constructor);
+        }
+
         setWithoutUpdate(value) {
             if (this.#old_closure) {
                 this.#value.removeClosure(this.#old_closure);
@@ -200,6 +222,11 @@ const fastn = (function (fastn) {
                 // The `this.#value.replace(value);` will replace the value of
                 // `orange-green` with `{light: red, dark: red}`
                 this.#value = value;
+            } else if (this.#value instanceof MutableList) {
+                if (value instanceof fastn.mutableClass) {
+                    value = value.get();
+                }
+                this.#value.set(value);
             } else {
                 this.#value = value;
             }
@@ -213,23 +240,28 @@ const fastn = (function (fastn) {
                 this.#old_closure = null;
             }
         }
+
         set(value) {
             this.setWithoutUpdate(value);
 
             this.#closureInstance.update();
         }
+
         // we have to unlink all nodes, else they will be kept in memory after the node is removed from DOM
         unlinkNode(node) {
             this.#closures = this.#closures.filter(
                 (closure) => closure.getNode() !== node,
             );
         }
+
         addClosure(closure) {
             this.#closures.push(closure);
         }
+
         removeClosure(closure) {
             this.#closures = this.#closures.filter((c) => c !== closure);
         }
+
         equalMutable(other) {
             if (!fastn_utils.deepEqual(this.get(), other.get())) {
                 return false;
@@ -239,6 +271,7 @@ const fastn = (function (fastn) {
 
             return thisClosures === otherClosures;
         }
+
         getClone() {
             return new Mutable(fastn_utils.clone(this.#value));
         }
@@ -249,6 +282,7 @@ const fastn = (function (fastn) {
         #cached_value;
         #closures;
         #closureInstance;
+
         constructor(targets, differentiator) {
             this.#differentiator = differentiator;
             this.#cached_value = this.#differentiator().get();
@@ -265,15 +299,19 @@ const fastn = (function (fastn) {
                 targets[idx].addClosure(this);
             }
         }
+
         addClosure(closure) {
             this.#closures.push(closure);
         }
+
         removeClosure(closure) {
             this.#closures = this.#closures.filter((c) => c !== closure);
         }
+
         update() {
             this.#cached_value = this.#differentiator().get();
         }
+
         get(key) {
             if (
                 !!key &&
@@ -285,6 +323,7 @@ const fastn = (function (fastn) {
             }
             return this.#cached_value;
         }
+
         set(value) {
             // Todo: Optimization removed. Reuse optimization later again
             /*if (fastn_utils.deepEqual(this.#cached_value, value)) {
@@ -298,6 +337,7 @@ const fastn = (function (fastn) {
         #list;
         #watchers;
         #closures;
+
         constructor(list) {
             this.#list = [];
             for (let idx in list) {
@@ -309,31 +349,46 @@ const fastn = (function (fastn) {
             this.#watchers = [];
             this.#closures = [];
         }
+
         addClosure(closure) {
             this.#closures.push(closure);
         }
+
         unlinkNode(node) {
             this.#closures = this.#closures.filter(
                 (closure) => closure.getNode() !== node,
             );
         }
+
         forLoop(root, dom_constructor) {
             let l = fastn_dom.forLoop(root, dom_constructor, this);
             this.#watchers.push(l);
             return l;
         }
+
         getList() {
             return this.#list;
         }
+
+        contains(item) {
+            return this.#list.some(
+                (obj) =>
+                    fastn_utils.getFlattenStaticValue(obj.item) ===
+                    fastn_utils.getFlattenStaticValue(item),
+            );
+        }
+
         getLength() {
             return this.#list.length;
         }
+
         get(idx) {
             if (fastn_utils.isNull(idx)) {
                 return this.getList();
             }
             return this.#list[idx];
         }
+
         set(index, value) {
             if (value === undefined) {
                 value = index;
@@ -350,6 +405,7 @@ const fastn = (function (fastn) {
                     this.#list.push(list[i]);
                 }
 
+                this.deleteEmptyWatchers();
                 for (let i in this.#watchers) {
                     this.#watchers[i].createAllNode();
                 }
@@ -360,6 +416,51 @@ const fastn = (function (fastn) {
 
             this.#closures.forEach((closure) => closure.update());
         }
+
+        // The watcher sometimes doesn't get deleted when the list is wrapped
+        // inside some ancestor DOM with if condition,
+        // so when if condition is unsatisfied the DOM gets deleted without removing
+        // the watcher from list as this list is not direct dependency of the if condition.
+        // Consider the case:
+        // -- ftd.column:
+        // if: { open }
+        //
+        // -- show-list: $item
+        // for: $item in $list
+        //
+        // -- end: ftd.column
+        //
+        // So when the if condition is satisfied the list adds the watcher for show-list
+        // but when the if condition is unsatisfied, the watcher doesn't get removed.
+        // though the DOM `show-list` gets deleted.
+        // This function removes all such watchers
+        // Without this function, the workaround would have been:
+        // -- ftd.column:
+        // if: { open }
+        //
+        // -- show-list: $item
+        // for: $item in *$list ;; clones the lists
+        //
+        // -- end: ftd.column
+        deleteEmptyWatchers() {
+            this.#watchers = this.#watchers.filter((w) => {
+                let to_delete = false;
+                if (!!w.getParent) {
+                    let parent = w.getParent();
+                    while (!!parent && !!parent.getParent) {
+                        parent = parent.getParent();
+                    }
+                    if (!parent) {
+                        to_delete = true;
+                    }
+                }
+                if (to_delete) {
+                    w.deleteAllNode();
+                }
+                return !to_delete;
+            });
+        }
+
         insertAt(index, value) {
             index = fastn_utils.getFlattenStaticValue(index);
             let mutable = fastn.wrapMutable(value);
@@ -372,14 +473,17 @@ const fastn = (function (fastn) {
                 this.#list[i].index.set(i);
             }
 
+            this.deleteEmptyWatchers();
             for (let i in this.#watchers) {
                 this.#watchers[i].createNode(index);
             }
             this.#closures.forEach((closure) => closure.update());
         }
+
         push(value) {
             this.insertAt(this.#list.length, value);
         }
+
         deleteAt(index) {
             index = fastn_utils.getFlattenStaticValue(index);
             this.#list.splice(index, 1);
@@ -388,22 +492,28 @@ const fastn = (function (fastn) {
                 this.#list[i].index.set(i);
             }
 
+            this.deleteEmptyWatchers();
             for (let i in this.#watchers) {
                 let forLoop = this.#watchers[i];
                 forLoop.deleteNode(index);
             }
             this.#closures.forEach((closure) => closure.update());
         }
+
         clearAll() {
             this.#list = [];
+
+            this.deleteEmptyWatchers();
             for (let i in this.#watchers) {
                 this.#watchers[i].deleteAllNode();
             }
             this.#closures.forEach((closure) => closure.update());
         }
+
         pop() {
             this.deleteAt(this.#list.length - 1);
         }
+
         getClone() {
             let current_list = this.#list;
             let new_list = [];
@@ -466,6 +576,7 @@ const fastn = (function (fastn) {
     class RecordInstance {
         #fields;
         #closures;
+
         constructor(obj) {
             this.#fields = {};
             this.#closures = [];
@@ -479,9 +590,11 @@ const fastn = (function (fastn) {
                 }
             }
         }
+
         getAllFields() {
             return this.#fields;
         }
+
         getClonedFields() {
             let clonedFields = {};
             for (let key in this.#fields) {
@@ -498,30 +611,32 @@ const fastn = (function (fastn) {
             }
             return clonedFields;
         }
+
         addClosure(closure) {
             this.#closures.push(closure);
         }
+
         unlinkNode(node) {
             this.#closures = this.#closures.filter(
                 (closure) => closure.getNode() !== node,
             );
         }
+
         get(key) {
             return this.#fields[key];
         }
+
         set(key, value) {
             if (value === undefined) {
                 value = key;
                 if (!(value instanceof RecordInstance)) {
                     value = new RecordInstance(value);
                 }
-
-                let fields = {};
                 for (let key in value.#fields) {
-                    fields[key] = value.#fields[key];
+                    if (this.#fields[key]) {
+                        this.#fields[key].set(value.#fields[key]);
+                    }
                 }
-
-                this.#fields = fields;
             } else if (this.#fields[key] === undefined) {
                 this.#fields[key] = fastn.mutable(null);
                 this.#fields[key].setWithoutUpdate(value);
@@ -530,10 +645,12 @@ const fastn = (function (fastn) {
             }
             this.#closures.forEach((closure) => closure.update());
         }
+
         setAndReturn(key, value) {
             this.set(key, value);
             return this;
         }
+
         replace(obj) {
             for (let key in this.#fields) {
                 if (!(key in obj.#fields)) {
@@ -547,6 +664,7 @@ const fastn = (function (fastn) {
             }
             this.#closures.forEach((closure) => closure.update());
         }
+
         toObject() {
             return Object.fromEntries(
                 Object.entries(this.#fields).map(([key, value]) => [
@@ -555,6 +673,7 @@ const fastn = (function (fastn) {
                 ]),
             );
         }
+
         getClone() {
             let current_fields = this.#fields;
             let cloned_fields = {};
@@ -572,6 +691,7 @@ const fastn = (function (fastn) {
     class Module {
         #name;
         #global;
+
         constructor(name, global) {
             this.#name = name;
             this.#global = global;
@@ -667,6 +787,7 @@ fastn_dom.propertyMap = {
     "text-shadow": "tsh",
     cursor: "cur",
     display: "d",
+    download: "dw",
     "flex-wrap": "fw",
     "font-style": "fst",
     "font-weight": "fwt",
@@ -788,6 +909,7 @@ fastn_dom.ElementKind = {
         return [17, [webcomponent, args]];
     },
     Video: 18,
+    Audio: 19,
 };
 
 fastn_dom.PropertyKind = {
@@ -892,31 +1014,33 @@ fastn_dom.PropertyKind = {
         MetaOGImage: 97,
         MetaTwitterImage: 98,
         MetaThemeColor: 99,
-        MetaFacebookDomainVerification: 123,
+        MetaFacebookDomainVerification: 100,
     },
-    Shadow: 100,
-    CodeTheme: 101,
-    CodeLanguage: 102,
-    CodeShowLineNumber: 103,
-    Css: 104,
-    Js: 105,
-    LinkRel: 106,
-    InputMaxLength: 107,
-    Favicon: 108,
-    Fit: 109,
-    VideoSrc: 110,
-    Autoplay: 111,
-    Poster: 112,
-    LoopVideo: 113,
-    Controls: 114,
-    Muted: 115,
-    LinkColor: 116,
-    TextShadow: 117,
-    Selectable: 118,
-    BackdropFilter: 119,
-    Mask: 120,
-    TextInputValue: 121,
-    FetchPriority: 122,
+    Shadow: 101,
+    CodeTheme: 102,
+    CodeLanguage: 103,
+    CodeShowLineNumber: 104,
+    Css: 105,
+    Js: 106,
+    LinkRel: 107,
+    InputMaxLength: 108,
+    Favicon: 109,
+    Fit: 110,
+    VideoSrc: 111,
+    Autoplay: 112,
+    Poster: 113,
+    Loop: 114,
+    Controls: 115,
+    Muted: 116,
+    LinkColor: 117,
+    TextShadow: 118,
+    Selectable: 119,
+    BackdropFilter: 120,
+    Mask: 121,
+    TextInputValue: 122,
+    FetchPriority: 123,
+    Download: 124,
+    SrcDoc: 125,
 };
 
 fastn_dom.Loading = {
@@ -2365,6 +2489,92 @@ class Node2 {
             }
         }
     }
+
+    attachImageSrcClosures(staticValue) {
+        if (fastn_utils.isNull(staticValue)) return;
+
+        if (staticValue instanceof fastn.recordInstanceClass) {
+            let value = staticValue;
+            let fields = value.getAllFields();
+
+            let light_field_value = fastn_utils.flattenMutable(fields["light"]);
+            light_field_value.addClosure(
+                fastn
+                    .closure(() => {
+                        const is_dark_mode = ftd.dark_mode.get();
+                        if (is_dark_mode) return;
+
+                        const src =
+                            fastn_utils.getStaticValue(light_field_value);
+                        if (!ssr) {
+                            let image_node = this.#node;
+                            if (!fastn_utils.isNull(image_node)) {
+                                if (image_node.nodeName.toLowerCase() === "a") {
+                                    let childNodes = image_node.childNodes;
+                                    childNodes.forEach(function (child) {
+                                        if (
+                                            child.nodeName.toLowerCase() ===
+                                            "img"
+                                        )
+                                            image_node = child;
+                                    });
+                                }
+                                image_node.setAttribute(
+                                    "src",
+                                    fastn_utils.getStaticValue(src),
+                                );
+                            }
+                        } else {
+                            this.attachAttribute(
+                                "src",
+                                fastn_utils.getStaticValue(src),
+                            );
+                        }
+                    })
+                    .addNodeProperty(this, null, inherited),
+            );
+            this.#mutables.push(light_field_value);
+
+            let dark_field_value = fastn_utils.flattenMutable(fields["dark"]);
+            dark_field_value.addClosure(
+                fastn
+                    .closure(() => {
+                        const is_dark_mode = ftd.dark_mode.get();
+                        if (!is_dark_mode) return;
+
+                        const src =
+                            fastn_utils.getStaticValue(dark_field_value);
+                        if (!ssr) {
+                            let image_node = this.#node;
+                            if (!fastn_utils.isNull(image_node)) {
+                                if (image_node.nodeName.toLowerCase() === "a") {
+                                    let childNodes = image_node.childNodes;
+                                    childNodes.forEach(function (child) {
+                                        if (
+                                            child.nodeName.toLowerCase() ===
+                                            "img"
+                                        )
+                                            image_node = child;
+                                    });
+                                }
+                                image_node.setAttribute(
+                                    "src",
+                                    fastn_utils.getStaticValue(src),
+                                );
+                            }
+                        } else {
+                            this.attachAttribute(
+                                "src",
+                                fastn_utils.getStaticValue(src),
+                            );
+                        }
+                    })
+                    .addNodeProperty(this, null, inherited),
+            );
+            this.#mutables.push(dark_field_value);
+        }
+    }
+
     attachLinkColor(value) {
         ftd.dark_mode.addClosure(
             fastn
@@ -2860,6 +3070,7 @@ class Node2 {
                 default:
                     this.attachAttribute("checked", staticValue);
             }
+            if (!ssr) this.#node.checked = staticValue;
         } else if (kind === fastn_dom.PropertyKind.Enabled) {
             switch (staticValue) {
                 case "false":
@@ -2900,6 +3111,11 @@ class Node2 {
                     break;
             }
             this.updateTextInputValue();
+        } else if (kind === fastn_dom.PropertyKind.Download) {
+            if (fastn_utils.isNull(staticValue)) {
+                return;
+            }
+            this.attachAttribute("download", staticValue);
         } else if (kind === fastn_dom.PropertyKind.Link) {
             // Changing node type to `a` for link
             // todo: needs fix for image links
@@ -2942,7 +3158,10 @@ class Node2 {
             this.attachAttribute("loading", staticValue);
         } else if (kind === fastn_dom.PropertyKind.Src) {
             this.attachAttribute("src", staticValue);
+        } else if (kind === fastn_dom.PropertyKind.SrcDoc) {
+            this.attachAttribute("srcdoc", staticValue);
         } else if (kind === fastn_dom.PropertyKind.ImageSrc) {
+            this.attachImageSrcClosures(staticValue);
             ftd.dark_mode.addClosure(
                 fastn
                     .closure(() => {
@@ -2956,17 +3175,22 @@ class Node2 {
                         );
                         if (!ssr) {
                             let image_node = this.#node;
-                            if (image_node.nodeName.toLowerCase() === "a") {
-                                let childNodes = image_node.childNodes;
-                                childNodes.forEach(function (child) {
-                                    if (child.nodeName.toLowerCase() === "img")
-                                        image_node = child;
-                                });
+                            if (!fastn_utils.isNull(image_node)) {
+                                if (image_node.nodeName.toLowerCase() === "a") {
+                                    let childNodes = image_node.childNodes;
+                                    childNodes.forEach(function (child) {
+                                        if (
+                                            child.nodeName.toLowerCase() ===
+                                            "img"
+                                        )
+                                            image_node = child;
+                                    });
+                                }
+                                image_node.setAttribute(
+                                    "src",
+                                    fastn_utils.getStaticValue(src),
+                                );
                             }
-                            image_node.setAttribute(
-                                "src",
-                                fastn_utils.getStaticValue(src),
-                            );
                         } else {
                             this.attachAttribute(
                                 "src",
@@ -3018,7 +3242,7 @@ class Node2 {
             } else {
                 this.removeAttribute("controls");
             }
-        } else if (kind === fastn_dom.PropertyKind.LoopVideo) {
+        } else if (kind === fastn_dom.PropertyKind.Loop) {
             if (staticValue) {
                 this.attachAttribute("loop", staticValue);
             } else {
@@ -3526,6 +3750,8 @@ let fastn_utils = {
             attributes["allowfullscreen"] = "";
         } else if (kind === fastn_dom.ElementKind.Image) {
             node = "img";
+        } else if (kind === fastn_dom.ElementKind.Audio) {
+            node = "audio";
         } else if (kind === fastn_dom.ElementKind.Video) {
             node = "video";
         } else if (
@@ -3649,6 +3875,9 @@ let fastn_utils = {
                 let fields = {};
                 for (let objKey in obj) {
                     fields[objKey] = fastn_utils.staticToMutables(obj[objKey]);
+                    if (fields[objKey] instanceof fastn.mutableClass) {
+                        fields[objKey] = fields[objKey].get();
+                    }
                 }
                 return fastn.recordInstance(fields);
             } else {
@@ -3657,6 +3886,32 @@ let fastn_utils = {
         } else {
             return obj;
         }
+    },
+    mutableToStaticValue(obj) {
+        if (obj instanceof fastn.mutableClass) {
+            return this.mutableToStaticValue(obj.get());
+        } else if (obj instanceof fastn.mutableListClass) {
+            let list = obj.getList();
+            return list.map((func) => this.mutableToStaticValue(func.item));
+        } else if (obj instanceof fastn.recordInstanceClass) {
+            let fields = obj.getAllFields();
+            return Object.fromEntries(
+                Object.entries(fields).map(([k, v]) => [
+                    k,
+                    this.mutableToStaticValue(v),
+                ]),
+            );
+        } else {
+            return obj;
+        }
+    },
+    flattenMutable(value) {
+        if (!(value instanceof fastn.mutableClass)) return value;
+
+        if (value.get() instanceof fastn.mutableClass)
+            return this.flattenMutable(value.get());
+
+        return value;
     },
     getFlattenStaticValue(obj) {
         let staticValue = fastn_utils.getStaticValue(obj);
@@ -3696,6 +3951,7 @@ let fastn_utils = {
         }
     },
     setter(variable, value) {
+        variable = fastn_utils.flattenMutable(variable);
         if (!fastn_utils.isNull(variable) && variable.set) {
             variable.set(value);
             return true;
@@ -3964,6 +4220,9 @@ let fastn_utils = {
     },
     getNodeValue(node) {
         return node.getNode().value;
+    },
+    getNodeCheckedState(node) {
+        return node.getNode().checked;
     },
     setFullHeight() {
         if (!ssr) {
@@ -4639,6 +4898,10 @@ const ftd = (function () {
     // Todo: Implement this (Remove highlighter)
     exports.clean_code = (args) => args.a;
 
+    exports.go_back = () => {
+        window.history.back();
+    };
+
     exports.set_rive_boolean = (args, node) => {
         if (!!args.rive) {
             let riveNode = riveNodes[`${args.rive}__${exports.device.get()}`];
@@ -4742,6 +5005,14 @@ const ftd = (function () {
         );
     };
 
+    exports.field_with_default_js = function (name, default_value) {
+        let r = fastn.recordInstance();
+        r.set("name", fastn_utils.getFlattenStaticValue(name));
+        r.set("value", fastn_utils.getFlattenStaticValue(default_value));
+        r.set("error", null);
+        return r;
+    };
+
     exports.append = function (list, item) {
         list.push(item);
     };
@@ -4758,81 +5029,58 @@ const ftd = (function () {
         list.clearAll();
     };
     exports.clear = exports.clear_all;
+    exports.list_contains = function (list, item) {
+        return list.contains(item);
+    };
     exports.set_list = function (list, value) {
         list.set(value);
     };
 
-    exports.http = function (url, opts, ...body) {
-        if ((!opts) instanceof fastn.recordInstanceClass) {
-            console.info(`opts must be a record instance of
-                -- record ftd.http-options:
-                string method: GET
-                string redirect: manual
-                string fastn-module:
-            `);
-            throw new Error("invalid opts");
-        }
-
-        let method = opts.get("method").get();
-        let fastn_module = opts.get("fastn_module").get();
-        let redirect = opts.get("redirect").get();
-
-        if (!["manual", "follow", "error"].includes(redirect)) {
-            throw new Error(
-                `redirect must be one of "manual", "follow", "error"`,
-            );
-        }
-
+    exports.http = function (url, method, headers, ...body) {
         if (url instanceof fastn.mutableClass) url = url.get();
+        if (method instanceof fastn.mutableClass) method = method.get();
         method = method.trim().toUpperCase();
-        let request_json = {};
-
         const init = {
             method,
             headers: { "Content-Type": "application/json" },
-            json: null,
-            redirect,
         };
+        if (headers && headers instanceof fastn.recordInstanceClass) {
+            Object.assign(init.headers, headers.toObject());
+        }
+        if (method !== "GET") {
+            init.headers["Content-Type"] = "application/json";
+        }
+        if (
+            body &&
+            body instanceof fastn.recordInstanceClass &&
+            method !== "GET"
+        ) {
+            init.body = JSON.stringify(body.toObject());
+        } else if (body && method !== "GET") {
+            let json = body[0];
+            if (
+                body.length !== 1 ||
+                (body[0].length === 2 && Array.isArray(body[0]))
+            ) {
+                let new_json = {};
+                // @ts-ignore
+                for (let [header, value] of Object.entries(body)) {
+                    let [key, val] =
+                        value.length == 2 ? value : [header, value];
 
-        if (body && method !== "GET") {
-            if (body[0] instanceof fastn.recordInstanceClass) {
-                if (body.length !== 1) {
-                    console.warn(
-                        "body is a record instance, but has more than 1 element, ignoring",
-                    );
+                    new_json[key] = fastn_utils.getFlattenStaticValue(val);
                 }
-                request_json = body[0].toObject();
-            } else {
-                let json = body[0];
-                if (
-                    body.length !== 1 ||
-                    (body[0].length === 2 && Array.isArray(body[0]))
-                ) {
-                    let new_json = {};
-                    // @ts-ignore
-                    for (let [header, value] of Object.entries(body)) {
-                        let [key, val] =
-                            value.length === 2 ? value : [header, value];
-                        new_json[key] = fastn_utils.getStaticValue(val);
-                    }
-                    json = new_json;
-                }
-                request_json = json;
+                json = new_json;
             }
+            init.body = JSON.stringify(json);
         }
 
-        init.body = JSON.stringify(request_json);
-
         let json;
+
         fetch(url, init)
             .then((res) => {
-                if (res.redirected) {
-                    window.location.href = res.url;
-                    return;
-                }
-
                 if (!res.ok) {
-                    return new Error("[http]: Request failed", res);
+                    return new Error("[http]: Request failed: " + res);
                 }
 
                 return res.json();
@@ -4851,10 +5099,10 @@ const ftd = (function () {
                             if (Array.isArray(value)) {
                                 // django returns a list of strings
                                 value = value.join(" ");
+                                // also django does not append `-error`
+                                key = key + "-error";
                             }
-                            // also django does not append `-error`
-                            key = key + "-error";
-                            key = fastn_module + "#" + key;
+                            // @ts-ignore
                             data[key] = value;
                         }
                     }
@@ -4867,6 +5115,7 @@ const ftd = (function () {
                             data = response.data;
                         }
                     }
+                    console.log(response);
                     for (let ftd_variable of Object.keys(data)) {
                         // @ts-ignore
                         window.ftd.set_value(ftd_variable, data[ftd_variable]);
@@ -4986,7 +5235,8 @@ const ftd = (function () {
             .replaceAll(",", "$")
             .replaceAll("\\", "/")
             .replaceAll("/", "_")
-            .replaceAll(".", "_");
+            .replaceAll(".", "_")
+            .replaceAll("~", "_");
     }
 
     function getDocNameAndRemaining(s) {
@@ -5032,7 +5282,11 @@ const ftd = (function () {
         if (remaining) {
             mutable.get(remaining).set(value);
         } else {
-            mutable.set(value);
+            let mutableValue = fastn_utils.staticToMutables(value);
+            if (mutableValue instanceof fastn.mutableClass) {
+                mutableValue = mutableValue.get();
+            }
+            mutable.set(mutableValue);
         }
     };
 
@@ -5048,9 +5302,10 @@ const ftd = (function () {
         const value = global[name];
         if (isMutable(value)) {
             if (remaining) {
-                return value.get(remaining);
+                let obj = value.get(remaining);
+                return fastn_utils.mutableToStaticValue(obj);
             } else {
-                return value.get();
+                return fastn_utils.mutableToStaticValue(value);
             }
         } else {
             return value;
@@ -5068,6 +5323,71 @@ const ftd = (function () {
         return fastn_utils.private.getCookie("fastn-lang");
     };
 
+    exports.submit_form = function (url, ...args) {
+        if (url instanceof fastn.mutableClass) url = url.get();
+
+        let data = {};
+        let arg_map = {};
+
+        for (let i = 0, len = args.length; i < len; i += 1) {
+            let obj = args[i];
+            if (obj instanceof fastn.mutableClass) {
+                obj = obj.get();
+            }
+            console.assert(obj instanceof fastn.recordInstanceClass);
+            let name = obj.get("name").get();
+            arg_map[name] = obj;
+            obj.get("error").set(null);
+            data[name] = fastn_utils.getFlattenStaticValue(obj.get("value"));
+        }
+
+        let init = {
+            method: "POST",
+            redirect: "error",
+            // TODO: set credentials?
+            credentials: "same-origin",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+        };
+
+        console.log(url, data);
+
+        fetch(url, init)
+            .then((res) => {
+                if (!res.ok) {
+                    return new Error("[http_post]: Request failed: " + res);
+                }
+                return res.json();
+            })
+            .then((response) => {
+                console.log("[http]: Response OK", response);
+                if (response.redirect) {
+                    window.location.href = response.redirect;
+                } else if (!!response && !!response.reload) {
+                    window.location.reload();
+                } else if (!!response.errors) {
+                    for (let key of Object.keys(response.errors)) {
+                        let obj = arg_map[key];
+                        if (!obj) {
+                            console.warn("found unknown key, ignoring: ", key);
+                            continue;
+                        }
+                        let error = response.errors[key];
+                        if (Array.isArray(error)) {
+                            // django returns a list of strings
+                            error = error.join(" ");
+                        }
+                        // @ts-ignore
+                        obj.get("error").set(error);
+                    }
+                } else if (!!response.data) {
+                    console.error("data not yet implemented");
+                } else {
+                    console.error("found invalid response", response);
+                }
+            })
+            .catch(console.error);
+    };
     return exports;
 })();
 
@@ -5336,7 +5656,7 @@ ftd.toggle = function (args) {
   try {
     let __args__ = fastn_utils.getArgs({
     }, args);
-    let fastn_utils_val___args___a = fastn_utils.clone(!fastn_utils.getter(__args__.a));
+    let fastn_utils_val___args___a = fastn_utils.clone(!fastn_utils.getStaticValue(__args__.a));
     if (fastn_utils_val___args___a instanceof fastn.mutableClass) {
       fastn_utils_val___args___a = fastn_utils_val___args___a.get();
     }
@@ -5347,13 +5667,57 @@ ftd.toggle = function (args) {
     __fastn_package_name__ = __fastn_super_package_name__;
   }
 }
+ftd.integer_field_with_default = function (args) {
+  let __fastn_super_package_name__ = __fastn_package_name__;
+  __fastn_package_name__ = "ftd_lang_github_io_fastn_ui";
+  try {
+    let __args__ = fastn_utils.getArgs({
+    }, args);
+    return (ftd.field_with_default_js(__args__.name, __args__.default));
+  } finally {
+    __fastn_package_name__ = __fastn_super_package_name__;
+  }
+}
+ftd.decimal_field_with_default = function (args) {
+  let __fastn_super_package_name__ = __fastn_package_name__;
+  __fastn_package_name__ = "ftd_lang_github_io_fastn_ui";
+  try {
+    let __args__ = fastn_utils.getArgs({
+    }, args);
+    return (ftd.field_with_default_js(__args__.name, __args__.default));
+  } finally {
+    __fastn_package_name__ = __fastn_super_package_name__;
+  }
+}
+ftd.boolean_field_with_default = function (args) {
+  let __fastn_super_package_name__ = __fastn_package_name__;
+  __fastn_package_name__ = "ftd_lang_github_io_fastn_ui";
+  try {
+    let __args__ = fastn_utils.getArgs({
+    }, args);
+    return (ftd.field_with_default_js(__args__.name, __args__.default));
+  } finally {
+    __fastn_package_name__ = __fastn_super_package_name__;
+  }
+}
+ftd.string_field_with_default = function (args) {
+  let __fastn_super_package_name__ = __fastn_package_name__;
+  __fastn_package_name__ = "ftd_lang_github_io_fastn_ui";
+  try {
+    let __args__ = fastn_utils.getArgs({
+    }, args);
+    return (ftd.field_with_default_js(__args__.name, __args__.default));
+  } finally {
+    __fastn_package_name__ = __fastn_super_package_name__;
+  }
+}
 ftd.increment = function (args) {
   let __fastn_super_package_name__ = __fastn_package_name__;
   __fastn_package_name__ = "ftd_lang_github_io_fastn_ui";
   try {
     let __args__ = fastn_utils.getArgs({
     }, args);
-    let fastn_utils_val___args___a = fastn_utils.clone(fastn_utils.getter(__args__.a) + 1);
+    let fastn_utils_val___args___a = fastn_utils.clone(fastn_utils.getStaticValue(__args__.a) + 1);
     if (fastn_utils_val___args___a instanceof fastn.mutableClass) {
       fastn_utils_val___args___a = fastn_utils_val___args___a.get();
     }
@@ -5370,7 +5734,7 @@ ftd.increment_by = function (args) {
   try {
     let __args__ = fastn_utils.getArgs({
     }, args);
-    let fastn_utils_val___args___a = fastn_utils.clone(fastn_utils.getter(__args__.a) + fastn_utils.getter(__args__.v));
+    let fastn_utils_val___args___a = fastn_utils.clone(fastn_utils.getStaticValue(__args__.a) + fastn_utils.getStaticValue(__args__.v));
     if (fastn_utils_val___args___a instanceof fastn.mutableClass) {
       fastn_utils_val___args___a = fastn_utils_val___args___a.get();
     }
@@ -5387,7 +5751,7 @@ ftd.decrement = function (args) {
   try {
     let __args__ = fastn_utils.getArgs({
     }, args);
-    let fastn_utils_val___args___a = fastn_utils.clone(fastn_utils.getter(__args__.a) - 1);
+    let fastn_utils_val___args___a = fastn_utils.clone(fastn_utils.getStaticValue(__args__.a) - 1);
     if (fastn_utils_val___args___a instanceof fastn.mutableClass) {
       fastn_utils_val___args___a = fastn_utils_val___args___a.get();
     }
@@ -5404,7 +5768,7 @@ ftd.decrement_by = function (args) {
   try {
     let __args__ = fastn_utils.getArgs({
     }, args);
-    let fastn_utils_val___args___a = fastn_utils.clone(fastn_utils.getter(__args__.a) - fastn_utils.getter(__args__.v));
+    let fastn_utils_val___args___a = fastn_utils.clone(fastn_utils.getStaticValue(__args__.a) - fastn_utils.getStaticValue(__args__.v));
     if (fastn_utils_val___args___a instanceof fastn.mutableClass) {
       fastn_utils_val___args___a = fastn_utils_val___args___a.get();
     }
