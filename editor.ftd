@@ -1,7 +1,5 @@
 -- import: fastn
 
--- import: fastn-community.github.io/roboto-mono/assets as mono
-
 -- boolean show-cr-ui: false
 
 -- boolean show-create-new-folder: false
@@ -265,83 +263,83 @@ $processor$: toc
 -- $is-mobile: true
 if: { ftd.device == mobile }
 
--- ftd.image-src downarrow: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/downarrow.svg
-dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/downarrow.svg
+-- ftd.image-src downarrow: $assets.files.downarrow.svg
+dark: $assets.files.downarrow.svg
 
--- ftd.image-src close: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/cross.svg
-dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/cross.svg
+-- ftd.image-src close: $assets.files.cross.svg
+dark: $assets.files.cross.svg
 
--- ftd.image-src edit: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/edit.svg
-dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/edit.svg
+-- ftd.image-src edit: $assets.files.edit.svg
+dark: $assets.files.edit.svg
 
--- ftd.image-src e-active: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/e-active.svg
-dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/e-active.svg
+-- ftd.image-src e-active: $assets.files.e-active.svg
+dark: $assets.files.e-active.svg
 
--- ftd.image-src m-active: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/m-active.svg
-dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/m-active.svg
+-- ftd.image-src m-active: $assets.files.m-active.svg
+dark: $assets.files.m-active.svg
 
--- ftd.image-src edit-default: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/edit-icon-default.svg
-dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/edit-icon-default.svg
+-- ftd.image-src edit-default: $assets.files.edit-icon-default.svg
+dark: $assets.files.edit-icon-default.svg
 
--- ftd.image-src file: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/file.svg
-dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/file.svg
+-- ftd.image-src file: $assets.files.file.svg
+dark: $assets.files.file.svg
 
--- ftd.image-src refresh: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/refresh.svg
-dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/refresh.svg
+-- ftd.image-src refresh: $assets.files.refresh.svg
+dark: $assets.files.refresh.svg
 
--- ftd.image-src mobile-active: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/mobile-active.svg
-dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/mobile-active.svg
+-- ftd.image-src mobile-active: $assets.files.mobile-active.svg
+dark: $assets.files.mobile-active.svg
 
--- ftd.image-src mobile: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/mobile.svg
-dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/mobile.svg
+-- ftd.image-src mobile: $assets.files.mobile.svg
+dark: $assets.files.mobile.svg
 
--- ftd.image-src file-icon: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/new-file-icon.svg
-dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/new-file-icon.svg
+-- ftd.image-src file-icon: $assets.files.new-file-icon.svg
+dark: $assets.files.new-file-icon.svg
 
--- ftd.image-src folder-icon: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/folder-icon.svg
-dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/folder-icon.svg
+-- ftd.image-src folder-icon: $assets.files.folder-icon.svg
+dark: $assets.files.folder-icon.svg
 
--- ftd.image-src right-arrow: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/right-arrow.svg
-dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/right-arrow.svg
+-- ftd.image-src right-arrow: $assets.files.right-arrow.svg
+dark: $assets.files.right-arrow.svg
 
--- ftd.image-src rename-icon: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/edit-icon.svg
-dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/edit-icon.svg
+-- ftd.image-src rename-icon: $assets.files.edit-icon.svg
+dark: $assets.files.edit-icon.svg
 
--- ftd.image-src server-icon: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/server.svg
-dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/server.svg
+-- ftd.image-src server-icon: $assets.files.server.svg
+dark: $assets.files.server.svg
 
--- ftd.image-src local-icon: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/local.svg
-dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/local.svg
+-- ftd.image-src local-icon: $assets.files.local.svg
+dark: $assets.files.local.svg
 
--- ftd.image-src pull-request-icon: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/git-pull-request.svg
-dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/git-pull-request.svg
+-- ftd.image-src pull-request-icon: $assets.files.git-pull-request.svg
+dark: $assets.files.git-pull-request.svg
 
--- ftd.image-src delete-icon: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/delete-icon.svg
-dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/delete-icon.svg
+-- ftd.image-src delete-icon: $assets.files.delete-icon.svg
+dark: $assets.files.delete-icon.svg
 
--- ftd.image-src arrow-right: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/arrow-right.png
-dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/arrow-right.png
+-- ftd.image-src arrow-right: $assets.files.arrow-right.png
+dark: $assets.files.arrow-right.png
 
--- ftd.image-src desktop: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/desktop.svg
-dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/desktop.svg
+-- ftd.image-src desktop: $assets.files.desktop.svg
+dark: $assets.files.desktop.svg
 
--- ftd.image-src desktop-active: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/desktop-active.svg
-dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/desktop-active.svg
+-- ftd.image-src desktop-active: $assets.files.desktop-active.svg
+dark: $assets.files.desktop-active.svg
 
--- ftd.image-src mobile-frame: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/mobile-frame.png
-dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/mobile-frame.png
+-- ftd.image-src mobile-frame: $assets.files.mobile-frame.png
+dark: $assets.files.mobile-frame.png
 
--- ftd.image-src sync-img: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/sync.svg
-dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/sync.svg
+-- ftd.image-src sync-img: $assets.files.sync.svg
+dark: $assets.files.sync.svg
 
--- ftd.image-src showbar: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/showbar.svg
-dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/showbar.svg
+-- ftd.image-src showbar: $assets.files.showbar.svg
+dark: $assets.files.showbar.svg
 
--- ftd.image-src m-default: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/m-default.svg
-dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/m-default.svg
+-- ftd.image-src m-default: $assets.files.m-default.svg
+dark: $assets.files.m-default.svg
 
--- ftd.image-src e-default: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/e-default.svg
-dark: https://fifthtry.github.io/fastn-ui/-/fifthtry.github.io/fastn-ui/e-default.svg
+-- ftd.image-src e-default: $assets.files.e-default.svg
+dark: $assets.files.e-default.svg
 
 
 
@@ -374,7 +372,7 @@ line-height: 16
 size: 13
 letter-spacing: 0
 
--- ftd.type monospace: $mono.fonts.Mono
+;; -- ftd.type monospace: $fastn.font-display
 desktop: $editor-font
 mobile: $editor-font
 xl: $editor-font
@@ -774,7 +772,7 @@ $on-input$: $source=$VALUE
 $on-input$: message-host $edit-obj
 $on-click$: $show-guide = true
 color: $inherited.colors.main.text
-role: $monospace
+;;role: $monospace
 background-color: $inherited.colors.main.background.base
 white-space: pre
 
@@ -2147,18 +2145,18 @@ $on-mouse-enter$: $show-revert = false
 if: $link is not null
 link: $link
 color: $inherited.colors.main.text-strong
-role: $monospace
+;;role: $monospace
 width: fill
 
 --- ftd.text: $title
 if: $link is null
 color: $inherited.colors.main.text-strong
-role: $monospace
+;;role: $monospace
 width: fill
 
 /--- ftd.text: C -- dont show any text in-case of status is untracked
 color: $changed
-role: $monospace
+;;role: $monospace
 align: right
 
 --- container: ftd.main
@@ -2175,19 +2173,19 @@ $on-mouse-enter$: $show-revert = false
 if: $link is not null
 link: $link
 color: $inherited.colors.main.text-strong
-role: $monospace
+;;role: $monospace
 white-space: nowrap
 width: fill
 
 --- ftd.text: $title
 if: $link is null
 color: $inherited.colors.main.text-strong
-role: $monospace
+;;role: $monospace
 width: fill
 
 --- ftd.text: A
 color: $added
-role: $monospace
+;;role: $monospace
 align: right
 
 --- container: ftd.main
@@ -2205,17 +2203,17 @@ if: $link is not null
 link: $link
 width: fill
 color: $inherited.colors.main.text-strong
-role: $monospace
+;;role: $monospace
 
 --- ftd.text: $title
 if: $link is null
 width: fill
 color: $inherited.colors.main.text-strong
-role: $monospace
+;;role: $monospace
 
 --- ftd.text: M
 color: $merge
-role: $monospace
+;;role: $monospace
 align: right
 
 --- container: ftd.main
@@ -2233,17 +2231,17 @@ if: $link is not null
 link: $link
 width: fill
 color: $inherited.colors.main.text-strong
-role: $monospace
+;;role: $monospace
 
 --- ftd.text: $title
 if: $link is null
 width: fill
 color: $inherited.colors.main.text-strong
-role: $monospace
+;;role: $monospace
 
 --- ftd.text: D
 color: $deleted
-role: $monospace
+;;role: $monospace
 align: right
 
 --- container: ftd.main
@@ -2261,17 +2259,17 @@ if: $link is not null
 link: $link
 width: fill
 color: $inherited.colors.main.text-strong
-role: $monospace
+;;role: $monospace
 
 --- ftd.text: $title
 if: $link is null
 width: fill
 color: $inherited.colors.main.text-strong
-role: $monospace
+;;role: $monospace
 
 --- ftd.text: C
 color: $changed
-role: $monospace
+;;role: $monospace
 align: right
 
 --- container: ftd.main
@@ -2289,17 +2287,17 @@ if: $link is not null
 link: $link
 width: fill
 color: $inherited.colors.main.text-strong
-role: $monospace
+;;role: $monospace
 
 --- ftd.text: $title
 if: $link is null
 width: fill
 color: $inherited.colors.main.text-strong
-role: $monospace
+;;role: $monospace
 
 --- ftd.text: O
 color: $outdated
-role: $monospace
+;;role: $monospace
 align: right
 
 --- container: ftd.main
@@ -2317,17 +2315,17 @@ if: $link is not null
 link: $link
 width: fill
 color: $inherited.colors.main.text-strong
-role: $monospace
+;;role: $monospace
 
 --- ftd.text: $title
 if: $link is null
 width: fill
 color: $inherited.colors.main.text-strong
-role: $monospace
+;;role: $monospace
 
 --- ftd.text: Cˆ
 color: $changed
-role: $monospace
+;;role: $monospace
 align: right
 
 --- container: ftd.main
@@ -2345,17 +2343,17 @@ if: $link is not null
 link: $link
 width: fill
 color: $inherited.colors.main.text-strong
-role: $monospace
+;;role: $monospace
 
 --- ftd.text: $title
 if: $link is null
 width: fill
 color: $inherited.colors.main.text-strong
-role: $monospace
+;;role: $monospace
 
 --- ftd.text: C˘
 color: $changed
-role: $monospace
+;;role: $monospace
 align: right
 
 --- container: ftd.main
@@ -2372,13 +2370,13 @@ if: $link is not null
 link: $link
 width: fill
 color: $inherited.colors.main.text-strong
-role: $monospace
+;;role: $monospace
 
 --- ftd.text: $title
 width: fill
 if: $link is null
 color: $inherited.colors.main.text-strong
-role: $monospace
+;;role: $monospace
 
 
 
@@ -2651,13 +2649,13 @@ spacing: 8
 --- ftd.text: $title
 if: $link is not null
 color: $inherited.colors.main.text-strong
-role: $monospace
+;;role: $monospace
 white-space: nowrap
 
 --- ftd.text: $title
 if: $link is null
 color: $inherited.colors.main.text-strong
-role: $monospace
+;;role: $monospace
 white-space: nowrap
 
 --- container: show-tooltip
@@ -2684,7 +2682,7 @@ if: $show-tooltip
 
 --- ftd.text: A
 color: $added
-role: $monospace
+;;role: $monospace
 align: right
 
 
@@ -2985,20 +2983,20 @@ spacing: 8
 --- ftd.text: $title
 if: $link is not null
 color: $inherited.colors.main.text-strong
-role: $monospace
+;;role: $monospace
 white-space: nowrap
 
 --- ftd.text: $title
 if: $link is null
 color: $inherited.colors.main.text-strong
-role: $monospace
+;;role: $monospace
 white-space: nowrap
 
 --- container: ftd.main
 
 --- ftd.text: A
 color: $added
-role: $monospace
+;;role: $monospace
 align: right
 
 
@@ -3020,7 +3018,7 @@ margin-left: $fastn.space.space-1
 
 --- ftd.text: $cr-number
 if: $url is null
-role: $monospace
+;;role: $monospace
 color: $blue
 
 --- container: ftd.main
@@ -3028,13 +3026,13 @@ color: $blue
 --- ftd.text: $cr-number
 if: $url is not null
 link: $url
-role: $monospace
+;;role: $monospace
 color: $blue
 
 --- container: ftd.main
 
 --- ftd.text: $cr-title
-role: $monospace
+;;role: $monospace
 width: fill
 color: $grey-medium
 link: $url
